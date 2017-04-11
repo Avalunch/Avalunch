@@ -8,7 +8,6 @@ FlowRouter.route('/', {
   },
 });
 
-
 FlowRouter.route('/restaurants', {
   name: 'Restaurants_Page',
   action() {
@@ -30,6 +29,12 @@ FlowRouter.route('/login', {
   },
 });
 
+FlowRouter.route('/search', {
+  name: 'Search_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Search_Page' });
+  },
+});
 
 FlowRouter.notFound = {
   action() {
