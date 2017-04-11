@@ -23,6 +23,13 @@ FlowRouter.route('/about-us', {
   },
 });
 
+FlowRouter.route('/login', {
+  name: 'Login_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Login_Page' });
+  },
+});
+
 
 FlowRouter.notFound = {
   action() {
