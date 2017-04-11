@@ -9,17 +9,17 @@ FlowRouter.route('/', {
 });
 
 
-FlowRouter.route('/add-contact', {
-  name: 'Add_Contact_Page',
+FlowRouter.route('/restaurants', {
+  name: 'Restaurants_Page',
   action() {
-    BlazeLayout.render('App_Body', { main: 'Add_Contact_Page' });
+    BlazeLayout.render('App_Body', { main: 'Restaurants_Page' });
   },
 });
 
-FlowRouter.route('/edit-contact/:_id', {
-  name: 'Edit_Contact_Page',
+FlowRouter.route('/about-us', {
+  name: 'About_Us_Page',
   action() {
-    BlazeLayout.render('App_Body', { main: 'Edit_Contact_Page' });
+    BlazeLayout.render('App_Body', { main: 'About_Us_Page' });
   },
 });
 
