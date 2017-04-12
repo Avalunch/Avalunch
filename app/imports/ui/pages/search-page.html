@@ -1,21 +1,6 @@
 <template name="Search_Page">
-  <div class="ui fluid vertical menu container">
-    <div class="item">
-      <div class="ui transparent icon input">
-        <input type="text" placeholder="Search posts...">
-        <i class="search icon"></i>
-      </div>
-      <div class="ui divider"></div>
-    </div>
-
-    <form class="ui form student-data-form item">
-      <p class="text"><b>Preferences:</b></p>
-      {{> Checkbox_Field label="Sweet"}}
-      {{> Checkbox_Field label="Sour"}}
-      {{> Checkbox_Field label="Cheap"}}
-      {{> Checkbox_Field label="Hot"}}
-      {{> Checkbox_Field label="Cold"}}
-    </form>
-
-  </div>
+  <option value="sweet">Sweet</option>
+  <option value="sour">Sour</option>
+  <option value="meat">Meat</option>
+  <option value="vegan">Vegan</option>
 </template>

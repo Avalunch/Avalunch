@@ -32,7 +32,6 @@ FlowRouter.route('/login', {
 FlowRouter.route('/search', {
   name: 'Search_Page',
   action() {
-    BlazeLayout.render('App_Body', { main: 'Search_Page' });
   },
 });
 

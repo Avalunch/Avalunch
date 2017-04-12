@@ -4,15 +4,26 @@
   <div style="border-radius:0px; margin:0px" class="ui inverted menu">
     <div class="ui container">
       <a class="item" href="{{pathFor 'Home_Page'}}"><h1>Food Service</h1></a>
-      <a class="{{ isActiveRoute 'Restaurants_Page'}} item" href="{{ pathFor 'Restaurants_Page' }}">Restaurants </a>
-      <a class="{{isActiveRoute 'About_Us_Page'}} item" href="{{pathFor 'About_Us_Page'}}">About Us </a>
+      <a class="{{ isActiveRoute 'Restaurants_Page'}} item" href="{{ pathFor 'Restaurants_Page' }}">Restaurants</a>
+      <a class="{{isActiveRoute 'About_Us_Page'}} item" href="{{pathFor 'About_Us_Page'}}">About Us</a>
+      <a class="{{isActiveRoute 'Login_Page'}} item" href="{{pathFor 'Login_Page'}}">Login</a>
 
-  <a class="{{isActiveRoute 'Login_Page'}} item" href="{{pathFor 'Login_Page'}}">Login</a>
-      <a class="left aligned item {{isActiveRoute 'Search_Page'}}" href="{{pathFor 'Search_Page'}}">Search</a>
+      <div class="right aligned item" href="">
+        <div class="ui inverted large transparent icon">
+          <i class="search icon"></i>
+        </div>
+
+      <select multiple="" class="ui wide search dropdown">
+        <option value="">Search</option>
+        <div class="ui divider"></div>
+        {{> Search_Page}}
+      </select>
+      </div>
     </div>
+
   </div>
 
-  <title>food</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script type="text/javascript"
