@@ -8,6 +8,13 @@ FlowRouter.route('/', {
   },
 });
 
+FlowRouter.route('/da-spot', {
+  name: 'Da_Spot_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Da_Spot_Page' });
+  },
+});
+
 FlowRouter.route('/restaurants', {
   name: 'Restaurants_Page',
   action() {
