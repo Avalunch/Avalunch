@@ -1,0 +1,263 @@
+
+body {
+  background-color: dimgrey;
+  margin: 0;
+  font-family: "brandon-grotesque",sans-serif;
+}
+
+#preloadimages {
+  visibility: hidden;
+  display: none;
+}
+
+p, h1, h2 {
+  margin: 0px;
+  padding: 0px;
+  font-family: "brandon-grotesque",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+
+.footer-background {
+  background-color: #000;
+  padding-top:20px;
+  color:white;
+}
+.footer1-background {
+  background-color: #fff;
+  padding-top:20px;
+  color:black;
+}
+
+
+a {
+  color: white;
+}
+
+.ui.inverted.menu{
+  background-color:	white;
+
+}
+
+#login-buttons a, .accounts-dialog a {
+  color:white;
+}
+/* css declaration for menu*/
+*, *:before, *:after {
+  -moz-box-sizing:
+          border-box;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0}
+body{
+
+  line-height:1.5;
+  font-family:sans-serif;
+  text-transform:uppercase;
+}
+a{text-decoration:none;color:#3B3D3E}
+#header{background:transparent;width:100%;position:relative}
+#header:after{content:"this is gaaayyyy";clear:both;display:block}
+.search{float:right;padding:30px;}
+input{border:none;padding:10px;border-radius:20px}
+.logo{float:left;padding:26px 0 26px}
+.logo a{font-size:28px;display:block;padding:0 0 0 20px}
+nav{float:right;}
+nav>ul{float:left;position:relative}
+nav li{list-style:none;float:left}
+nav .dropdown{position:relative}
+nav li a{float:left;padding:35px}
+nav li a:hover{text-decoration:underline;}
+nav li ul{display:none}
+nav li:hover ul{display:inline}
+nav li li{float:none}
+nav .dropdown ul{position:absolute;left:0;top:100%;background:#fff;padding:20px 0;border-bottom:3px solid #34495e}
+nav .dropdown li{white-space:nowrap}
+nav .dropdown li a{padding:10px 35px;font-size:13px;min-width:200px}
+nav .mega-dropdown{width:100%;position:absolute;top:100%;left:0;background:#fff;overflow:hidden;padding:20px 35px;border-bottom:3px solid #34495e}
+nav li li a{float:none;color:#333;display:block;padding:8px 10px;border-radius:3px;font-size:13px}
+nav li li a:hover{text-decoration:underline;}
+.mega-col{width:25%;float:left}
+#menu-icon{position:absolute;right:0;top:50%;margin-top:-12px;margin-right:30px;display:none}
+#menu-icon span{border:2px solid #fff;width:30px;margin-bottom:5px;display:block;-webkit-transition:all .2s;transition:all .1s}
+@media only screen and (max-width: 1170px) {
+  nav >ul>li >a{padding:35px 15px}
+}
+@media only screen and (min-width: 960px) {
+  nav{display:block!important}
+}
+@media only screen and (max-width: 959px) {
+  nav{display:none;width:100%;clear:both;float:none;max-height:400px;overflow-y:scroll}
+  #menu-icon{display:inline;top:45px;cursor:pointer}
+  #menu-icon.active .first{transform:rotate(45deg);-webkit-transform:rotate(45deg);margin-top:10px}
+  #menu-icon.active .second{transform:rotate(135deg);-webkit-transform:rotate(135deg);position:relative;top:-9px;}
+  #menu-icon.active .third{display:none}
+  .search{float:none}
+  .search input{width:100%}
+  nav{padding:10px}
+  nav ul{float:none}
+  nav li{float:none}
+  nav ul li a{float:none;padding:8px;display:block}
+  #header nav ul ul{display:block;position:static;background:none;border:none;padding:0}
+  #header nav a{color:#fff;padding:8px}
+  #header nav a:hover{text-decoration:underline;border-radius:3px}
+  #header nav ul li li a:before{content:"- "}
+  .mega-col{width:100%}
+}
+
+
+/* scss declaration for animation */
+
+@import url(http://fonts.googleapis.com/css?family=Pathway+Gothic+One);
+
+
+@-webkit-keyframes rotate-right {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotate-left {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes hover {
+  0% {
+    -webkit-transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(5%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes pull {
+  0% {
+    -webkit-transform: scaleY(1);
+  }
+  40% {
+    -webkit-transform: scaleY(1.01);
+  }
+  60% {
+    -webkit-transform: scaleY(0.99);
+  }
+  80% {
+    -webkit-transform: scaleY(1.01);
+  }
+  100% {
+    -webkit-transform: scaleY(0.99);
+  }
+  80% {
+    -webkit-transform: scaleY(1.01);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+  }
+}
+
+@function getSpeed($speed, $type:turtle) {
+$secs: 360;
+$divider: 1;
+  @if($type == turtle) {
+    $divider: 1;
+  } @else if($type == rabbit) {
+  $divider: 10;
+} @else {
+  $divider: 60;
+}
+  @if $speed == fastest {
+    $secs: 60 / $divider;
+  } @else if $speed == really-fast {
+  $secs: 120 / $divider;
+} @else if $speed == fast {
+  $secs: 180 / $divider;
+} @else if $speed == slow {
+  $secs: 240 / $divider;
+} @else if $speed == really-slow {
+  $secs: 300 / $divider;
+} @else if $speed == slowest {
+  $secs: 360 / $divider;
+}
+  @return #{$secs}s;
+}
+
+@mixin _rotate-animation($direction, $speed, $type) {
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-animation: rotate-#{$direction} getSpeed($speed, $type) linear 0s infinite;
+}
+
+@mixin _hover-animation($duration, $delay) {
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-animation: hover #{$duration}s linear #{$delay}s infinite;
+}
+
+@mixin _pull-animation($duration, $delay, $x: 200px, $y: 200px) {
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transform-origin: $x $y;
+  -webkit-animation: pull #{$duration}s linear #{$delay}s infinite alternate;
+}
+
+@mixin rotate($type, $direction: left, $speed: slow, $x: 200px, $y: 200px) {
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transform-origin: $x $y;
+@include _rotate-animation($direction, $speed, $type);
+}
+
+#burger, #beer {
+@include rotate(turtle, right, fastest);
+}
+
+#buildings {
+@include rotate(turtle, right, slow);
+}
+
+#frame {
+@include rotate(turtle, left, normal);
+}
+
+#globe {
+  $duration: 0;
+  $delay: 0;
+@include _hover-animation($duration, $delay);
+}
+
+#windmill {
+@include rotate(flash, right, really-fast, 331px, 201px);
+}
+
+// Clouds
+@for $i from 1 through 3 {
+  #cloud#{$i} {
+  @include _hover-animation(3, $i);
+  }
+}
+
+
+// Inner Circles
+@for $i from 1 through 5 {
+$direction: left;
+$speed: really-fast;
+  #circle#{$i} {
+  @if $i % 2 == 1 {
+    $direction: right;
+    $speed: really-fast;
+  } @else {
+  $direction: left;
+  $speed: slow;
+}
+  @include rotate(rabbit, $direction, $speed);
+}
+}
