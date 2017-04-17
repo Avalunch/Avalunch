@@ -22,10 +22,10 @@ FlowRouter.route('/directory', {
   },
 });
 
-FlowRouter.route('/lower_campus', {
-  name: 'Lower_campus',
+FlowRouter.route('/sign_up', {
+  name: 'Sign_up',
   action() {
-    BlazeLayout.render('App_Body', { main: 'Lower_campus' });
+    BlazeLayout.render('App_Body', { main: 'Sign_up' });
   },
 });
 
@@ -41,6 +41,13 @@ FlowRouter.route('/upper_campus', {
   name: 'Upper_campus',
   action() {
     BlazeLayout.render('App_Body', { main: 'Upper_campus' });
+  },
+});
+
+FlowRouter.route('/jamba_juice', {
+  name: 'jamba_juice',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'jamba_juice' });
   },
 });
 

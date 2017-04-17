@@ -4,8 +4,8 @@ import './home-page.js';
 import './search-page.html';
 import './search-page.js';
 
-import './lower_campus.html';
-import './lower_campus.js';
+import './sing_up.html';
+import './sign_up.js';
 
 import './directory.html';
 import './directory.js';
@@ -18,5 +18,8 @@ import './upper_campus.js';
 
 import './your_profile.html';
 import './your_profile.js';
+
+import './jamba_juice.html';
+import './jamba_juice.js';
 
 

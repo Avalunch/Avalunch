@@ -15,7 +15,7 @@
     <div class="ui center aligned container logo">
       <a class="item" style="z-index: -1; position:fixed; top:90px " href="{{pathFor 'Home_Page'}}"><img clas="ui floating center medium image" width="250px" height="250px" src="images/logo.gif"></a>
     </div>
-    <nav style="z-index: 3">
+    <nav style="position:z-index: 3">
       <form class="search" action="search.php">
         <input name="q" placeholder="Search..." type="search">
       </form>
@@ -34,7 +34,7 @@
                 <li><a href="#">Simply To Go</a></li>
               </ul>
               <ul class="mega-col">
-                <li><a href="#">Jamba Juice</a></li>
+                <li><a class="{{ isActiveRoute 'jamba_juice'}} item" href="{{ pathFor 'jamba_juice' }}">Jamba Juice</a></li>
                 <li><a href="#">Pizza Hut</a></li>
                 <li><a href="#">Center Campus Food Court</a></li>
                 <li><a href="#">Serg's Mexican Kitchen</a></li>
@@ -97,7 +97,7 @@
           <a class="{{ isActiveRoute 'Your_profile'}} item" href="{{ pathFor 'Your_profile' }}">Your Profile</a>
         </li>
         <li>
-          <a class="{{ isActiveRoute 'Lower_campus'}} item" href="{{ pathFor 'Lower_campus' }}">Sign In</a>
+          <a class="{{ isActiveRoute 'Sign_up'}} item" href="{{ pathFor 'Sign_up' }}">Sign In</a>
         </li>
       </ul>
     </nav>
