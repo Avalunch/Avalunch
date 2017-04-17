@@ -53,23 +53,35 @@ a {
   margin:0;
   padding:0}
 body{
-
+  background: radial-gradient(closest-side at 60% 55%, #44ffff, #ffffff);
   line-height:1.5;
   font-family:sans-serif;
   text-transform:uppercase;
 }
 a{text-decoration:none;color:#3B3D3E}
-#header{background:transparent;width:100%;position:relative}
-#header:after{content:"this is gaaayyyy";clear:both;display:block}
-.search{float:right;padding:30px;}
+
+#header{
+  background:transparent;
+  width:100%;
+  position:relative}
+
+#header:after{
+  position: fixed;
+  top:400px;
+  left:30px;
+  font-family: "brandon-grotesque",sans-serif;
+  font-size:15px;
+  content:"Welcome Fancy Face!!";
+  clear:both;display:block}
+.search{border: double;float:right;padding:30px;}
 input{border:none;padding:10px;border-radius:20px}
 .logo{float:left;padding:26px 0 26px}
 .logo a{font-size:28px;display:block;padding:0 0 0 20px}
-nav{float:right;}
+nav{background-color:transparent;position: absolute; top:0px; left:300px}
 nav>ul{float:left;position:relative}
 nav li{list-style:none;float:left}
 nav .dropdown{position:relative}
-nav li a{float:left;padding:35px}
+nav li a{float:left;padding:20px}
 nav li a:hover{text-decoration:underline;}
 nav li ul{display:none}
 nav li:hover ul{display:inline}
