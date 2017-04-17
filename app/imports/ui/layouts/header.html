@@ -13,9 +13,9 @@
   <!-- App Branding on Every Page -->
   <div id="header">
     <div class="ui center aligned container logo">
-      <a class="item" style="z-index: -1; position:absolute; top:90px " href="{{pathFor 'Home_Page'}}"><img clas="ui floating center medium image" width="250px" height="250px" src="images/logo.gif"></a>
+      <a class="item" style="z-index: -1; position:fixed; top:90px " href="{{pathFor 'Home_Page'}}"><img clas="ui floating center medium image" width="250px" height="250px" src="images/logo.gif"></a>
     </div>
-    <nav >
+    <nav style="z-index: 3">
       <form class="search" action="search.php">
         <input name="q" placeholder="Search..." type="search">
       </form>
@@ -91,13 +91,13 @@
           </ul>
         </li>
         <li>
-          <a href="">Maps</a>
+          <a class="{{ isActiveRoute 'Search_Page'}} item" href="{{ pathFor 'Search_Page' }}">Directory</a>
         </li>
         <li>
-          <a href="">Your Profile</a>
+          <a class="{{ isActiveRoute 'Your_profile'}} item" href="{{ pathFor 'Your_profile' }}">Your Profile</a>
         </li>
         <li>
-          <a href="">Sign In</a>
+          <a class="{{ isActiveRoute 'Lower_campus'}} item" href="{{ pathFor 'Lower_campus' }}">Sign In</a>
         </li>
       </ul>
     </nav>
