@@ -15,6 +15,27 @@ FlowRouter.route('/da-spot', {
   },
 });
 
+FlowRouter.route('/domino', {
+  name: 'Domino_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Domino_Page' });
+  },
+});
+
+FlowRouter.route('/honolulu-gourmet', {
+  name: 'Honolulu_Gourmet_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Honolulu_Gourmet_Page' });
+  },
+});
+
+FlowRouter.route('/green-garden', {
+  name: 'Green_Garden_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Green_Garden_Page' });
+  },
+});
+
 FlowRouter.route('/restaurants', {
   name: 'Restaurants_Page',
   action() {
