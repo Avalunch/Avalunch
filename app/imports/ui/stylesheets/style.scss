@@ -73,11 +73,12 @@ a{text-decoration:none;color:#3B3D3E}
   font-size:15px;
   content:"Welcome Fancy Face!!";
   clear:both;display:block}
+
 .search{border: double;float:right;padding:30px;}
 input{border:none;padding:10px;border-radius:20px}
 .logo{float:left;padding:26px 0 26px}
 .logo a{font-size:28px;display:block;padding:0 0 0 20px}
-nav{background-color:transparent;position: absolute; top:0px; left:300px}
+nav{background-color:transparent;position: fixed; top:0px; left:300px}
 nav>ul{float:left;position:relative}
 nav li{list-style:none;float:left}
 nav .dropdown{position:relative}

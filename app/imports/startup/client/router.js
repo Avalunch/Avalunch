@@ -8,19 +8,6 @@ FlowRouter.route('/', {
   },
 });
 
-FlowRouter.route('/restaurants', {
-  name: 'Restaurants_Page',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'Restaurants_Page' });
-  },
-});
-
-FlowRouter.route('/about-us', {
-  name: 'About_Us_Page',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'About_Us_Page' });
-  },
-});
 
 FlowRouter.route('/login', {
   name: 'Login_Page',
@@ -28,7 +15,42 @@ FlowRouter.route('/login', {
     BlazeLayout.render('App_Body', { main: 'Login_Page' });
   },
 });
+FlowRouter.route('/directory', {
+  name: 'Directory',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Directory' });
+  },
+});
 
+FlowRouter.route('/lower_campus', {
+  name: 'Lower_campus',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Lower_campus' });
+  },
+});
+
+FlowRouter.route('/paradise_palms', {
+  name: 'Paradise_palms',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Paradise_palms' });
+  },
+});
+
+
+FlowRouter.route('/upper_campus', {
+  name: 'Upper_campus',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Upper_campus' });
+  },
+});
+
+
+FlowRouter.route('/your_profile', {
+  name: 'Your_profile',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Your_profile' });
+  },
+});
 FlowRouter.route('/search', {
   name: 'Search_Page',
   action() {

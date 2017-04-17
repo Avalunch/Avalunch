@@ -24,7 +24,7 @@
           <a class="item" href="{{pathFor 'Home_Page'}}">Home</a>
         </li>
         <li>
-          <a href="">Upper Campus</a>
+          <a class="{{ isActiveRoute 'Upper_campus'}} item" href="{{ pathFor 'Upper_campus' }}">Upper Campus</a>
           <ul class="mega-dropdown">
             <li class="row">
               <ul class="mega-col">
@@ -103,9 +103,9 @@
     </nav>
   </div>
 
+  <a class="ui center aligned item" href="{{pathFor 'Home_Page'}}">
 
-
-  <svg class="ui center aligned container"
+  <svg
 
 
       version="1.1"
@@ -3096,7 +3096,7 @@ Foul+j+Tw9A1NKDbCwAAAABJRU5ErkJggg==
                           points="202.615,221.111 199.696,225.441 196.699,221.142   " /><g
                           id="g10014" /></g></g></g></svg>
 
-
+  </a>
   <!-- End App Branding with this line -->
 
 </template>
