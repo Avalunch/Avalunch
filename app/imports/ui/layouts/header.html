@@ -1,7 +1,15 @@
 <template name="Header">
-
+<style>
+body {
+  font: normal 14px/20px 'Open Sans', sans-serif;
+  background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%,#DDF0E4   100%);
+  color: #333;
+}
+</style>
+<body>
   <!-- Put header include statements below, inside this code block -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script type="text/javascript"
           src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
@@ -12,14 +20,8 @@
 
   <!-- App Branding on Every Page -->
   <div id="header">
-    <div class="ui center aligned container logo">
-      <a class="item" style="z-index: -1; position:fixed; top:90px " href="{{pathFor 'Home_Page'}}"><img clas="ui floating center medium image" width="250px" height="250px" src="images/logo.gif"></a>
-    </div>
-    <nav style="position:z-index: 3">
-      <form class="search" action="search.php">
-        <input name="q" placeholder="Search..." type="search">
-      </form>
-      <ul>
+    <nav style="z-index: 3; font-size:18px; font-family:   sans-serif;left 400px">
+      <ul style=" background: white; border: none; box-shadow: -5px -5px 5px #888 ">
         <li>
           <a class="item" href="{{pathFor 'Home_Page'}}">Home</a>
         </li>
@@ -3098,5 +3100,5 @@ Foul+j+Tw9A1NKDbCwAAAABJRU5ErkJggg==
 
   </a>
   <!-- End App Branding with this line -->
-
+</body>
 </template>
