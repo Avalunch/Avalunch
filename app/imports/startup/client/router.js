@@ -86,6 +86,14 @@ FlowRouter.route('/your_profile', {
     BlazeLayout.render('App_Body', { main: 'Your_profile' });
   },
 });
+
+FlowRouter.route('/aboutus', {
+  name: 'about_us',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'about_us' });
+  },
+});
+
 FlowRouter.route('/search', {
   name: 'Search_Page',
   action() {
