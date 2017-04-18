@@ -2,7 +2,7 @@
 p, h1, h2 {
   margin: 0px;
   padding: 0px;
-  font-family: 'Rubik Mono One',sans-serif;
+  font-family:  sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -45,20 +45,7 @@ p, h1, h2 {
 
 a{text-decoration:none;color:#3B3D3E}
 
-#header{
-  background:transparent;
-  width:100%;
-  position:relative}
 
-#header:after{
-  position: fixed;
-  top:400px;
-  left:30px;
-  font-family:  'Rubik Mono One', sans-serif;
-  font-size:45px;
-  color:rgb(99, 153, 117  );
-  content:"Welcome Fancy Face!!";
-  clear:both;display:block}
 
 .search{
   border: none;float:right;padding:30px;}
