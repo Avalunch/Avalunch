@@ -36,3 +36,4 @@ import './jamba_juice.js';
 
 import './aboutus.html';
 
+import '/imports/pages/templates/';
