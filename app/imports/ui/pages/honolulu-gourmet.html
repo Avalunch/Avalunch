@@ -1,55 +1,8 @@
 <template name="Honolulu_Gourmet_Page">
-  <div class="ui center aligned container">
-    <img class="ui small left floated image" src="images/meteor-logo.png">
-
-    <h1 class="ui header">Honolulu Gourmet</h1>
-
-    <p class="text">Honolulu Gourmet Foods features healthy locally grown salads, sandwiches, poke bowls and  grab and go items at affordable prices.</p>
-
-    <hr class="ui fitted divider">
-
-      <div class="ui cards">
-        <div class="card">
-          <div class="image">
-            <img src="images/meteor-logo.png">
-          </div>
-          <div class="content">
-            <div class="header">Tuna Melt Panini</div>
-            <div class="description"></div>
-            <div class="meta">$4.00</div>
-          </div>
-          <div class="extra content">
-            <div class="ui fluid green button">Order</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="image">
-            <img src="images/meteor-logo.png">
-          </div>
-          <div class="content">
-            <div class="header">Salad of the Day</div>
-            <div class="description"></div>
-            <div class="meta">$4.00</div>
-          </div>
-          <div class="extra content">
-            <div class="ui fluid green button">Order</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="image">
-            <img src="images/meteor-logo.png">
-          </div>
-          <div class="content">
-            <div class="header">Pasta Salad</div>
-            <div class="description"></div>
-            <div class="meta">$4.00</div>
-          </div>
-          <div class="extra content">
-            <div class="ui fluid green button">Order</div>
-          </div>
-        </div>
-      </div>
-    </div>
+  {{> Restaurant
+    name="Honolulu Gourmet"
+    image="images/meteor-logo.png"
+    info="Honolulu Gourmet Foods features healthy locally grown salads, sandwiches, poke bowls and  grab and go items at affordable prices."
+    menu=menu
+  }}
 </template>

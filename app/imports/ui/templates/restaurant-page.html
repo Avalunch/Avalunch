@@ -2,7 +2,7 @@
   {{!
   Parameters (order in which they are arrraged do not matter):
   name: The name of your restaurant
-  icon: The path to your restaurant's thumbnail
+  image: The path to your restaurant's thumbnail
   info: A short description of what your restaurant is/what they do.
   menu: A array of objects that contain all the food available for order. For this field, a getter function will
   need to be made in your page's corrsponding .js file. That getter function will have to return a object array that
@@ -53,8 +53,8 @@
           <div class="content">
             <img class="ui left floated mini image" src="{{item.icon}}">
             <div class="header">{{item.name}}</div>
-            <div class="description">{{#if item.info}} {{item.info}} {{else}}{{/if}}</div>
             <div class="meta">{{item.price}}</div>
+            <div class="description">{{#if item.info}} {{item.info}} {{else}}{{/if}}</div>
           </div>
           <div class="extra content">
             <div class="ui fluid green button">Order</div>
