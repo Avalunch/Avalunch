@@ -1,1 +1,0 @@
-import 'restaurant-page.html';

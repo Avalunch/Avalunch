@@ -1,0 +1,67 @@
+<template name="Restaurant">
+  {{!
+  Parameters (order in which they are arrraged do not matter):
+  name: The name of your restaurant
+  icon: The path to your restaurant's thumbnail
+  info: A short description of what your restaurant is/what they do.
+  menu: A array of objects that contain all the food available for order. For this field, a getter function will
+  need to be made in your page's corrsponding .js file. That getter function will have to return a object array that
+  will then be used by this template.
+        Format for each of the objects is as follows (order don't matter):
+              name: The food's name
+              icon: The path to a small picture or symbol of the food
+              info (optional): A short description of the food, or available options. This is where you would tell
+              the readers about what favors, sizes, etc. they can choose from
+              price: The price of your food
+
+  Examples:
+  { {> Restaurant name="Soubway" image="images/logo.png" info="The best sandwiches ever as long as you don't get meatball with everything on it." menu=getMenuItems} }
+  And in its .js file:
+  getMenuItems() {
+    return [
+                {
+                  name: 'Teri Chick',
+                  icon: 'images/chicken.png',
+                  price: '$4.00',
+                },
+                {
+                  name: 'BMT',
+                  icon: 'images/bmt.png',
+                  price: '$4.00',
+                },
+                {
+                  name: 'Meatball',
+                  icon: 'images/meatball.png',
+                  price: '$4.00',
+                },
+            ];
+  }
+  }}
+  <div class="ui center aligned container">
+    <img class="ui small left floated image" src="{{image}}">
+
+    <h1 class="ui header">{{name}}</h1>
+
+    <p class="text">{{info}}</p>
+
+    <hr class="ui fitted divider">
+
+    <div class="ui cards">
+
+      {{#each item in menu}}
+        <div class="card">
+          <div class="content">
+            <img class="ui left floated mini image" src="{{item.icon}}">
+            <div class="header">{{item.name}}</div>
+            <div class="description">{{#if item.info}} {{item.info}} {{else}}{{/if}}</div>
+            <div class="meta">{{item.price}}</div>
+          </div>
+          <div class="extra content">
+            <div class="ui fluid green button">Order</div>
+          </div>
+        </div>
+      {{/each}}
+
+    </div>
+  </div>
+</template>
