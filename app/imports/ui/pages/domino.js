@@ -1,5 +1,33 @@
 import { Template } from 'meteor/templating';
+export const entre = [
+{
+  name: 'Personal Pizza',
+  price: '$4.00',
 
+},
+{
+  name: 'Philly Cheese Steak',
+  price: '$4.00',
+},
+{
+  name: 'Stuffed Cheesy Bread',
+  price: '$4.00',
+},
+]
+export const drinks = [
+{
+  name: 'Personal Pizza',
+  price: '$4.00',
+
+},
+]
+export const deserts = [
+{
+  name: 'Personal Pizza',
+  price: '$4.00',
+
+},
+]
 export const menu = [
   {
     name: 'Personal Pizza',
@@ -23,5 +51,14 @@ export const menu = [
 Template.Domino_Page.helpers({
   menu() {
     return menu;
+  },
+  entre() {
+    return entre;
+  },
+  drinks() {
+    return entre;
+  },
+  drinks() {
+    return entre;
   },
 });
