@@ -35,5 +35,8 @@ import './jamba_juice.html';
 import './jamba_juice.js';
 
 import './aboutus.html';
+import './maps.html';
+
+
 
 import '/imports/ui/templates/';
