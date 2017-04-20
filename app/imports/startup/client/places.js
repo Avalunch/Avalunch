@@ -98,3 +98,59 @@ FlowRouter.route('/uahi-island', {
     BlazeLayout.render('App_Body', { main: 'Uahi_Island_Page' });
   },
 });
+
+FlowRouter.route('/ba-le', {
+  name: 'Ba_Le_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Ba_Le_Page' });
+  },
+});
+
+FlowRouter.route('/simply-to-go', {
+  name: 'Simply_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Simply_Page' });
+  },
+});
+
+FlowRouter.route('/pizza-hut', {
+  name: 'Pizza_Hut_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Pizza_Hut_Page' });
+  },
+});
+
+FlowRouter.route('/food-court', {
+  name: 'Food_Court_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Food_Court_Page' });
+  },
+});
+
+FlowRouter.route('/kamitoku-ramen', {
+  name: 'Kamitoku_Ramen_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Kamitoku_Ramen_Page' });
+  },
+});
+
+FlowRouter.route('/gateway', {
+  name: 'GateWay_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'GateWay_Page' });
+  },
+});
+
+FlowRouter.route('/hale-aloha', {
+  name: 'Hale_Aloha_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Hale_Aloha_Page' });
+  },
+});
+
+FlowRouter.route('/market', {
+  name: 'Market_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Market_Page' });
+  },
+});
