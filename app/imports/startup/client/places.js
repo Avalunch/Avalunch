@@ -1,0 +1,100 @@
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+
+FlowRouter.route('/jamba_juice', {
+  name: 'jamba_juice',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'jamba_juice' });
+  },
+});
+
+FlowRouter.route('/da-spot', {
+  name: 'Da_Spot_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Da_Spot_Page' });
+  },
+});
+
+FlowRouter.route('/domino', {
+  name: 'Domino_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Domino_Page' });
+  },
+});
+
+FlowRouter.route('/honolulu-gourmet', {
+  name: 'Honolulu_Gourmet_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Honolulu_Gourmet_Page' });
+  },
+});
+
+FlowRouter.route('/india-cafe', {
+  name: 'India_Cafe_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'India_Cafe_Page' });
+  },
+});
+
+FlowRouter.route('/l-and-l', {
+  name: 'L_And_L_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'L_And_L_Page' });
+  },
+});
+
+FlowRouter.route('/le-crepe', {
+  name: 'Le_Crepe_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Le_Crepe_Page' });
+  },
+});
+
+FlowRouter.route('/panda-express', {
+  name: 'Panda_Express_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Panda_Express_Page' });
+  },
+});
+
+FlowRouter.route('/green-garden', {
+  name: 'Green_Garden_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Green_Garden_Page' });
+  },
+});
+
+FlowRouter.route('/serg-mexican', {
+  name: 'Serg_Mexican_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Serg_Mexican_Page' });
+  },
+});
+
+FlowRouter.route('/curb', {
+  name: 'Curb_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Curb_Page' });
+  },
+});
+
+FlowRouter.route('/super-gyros', {
+  name: 'Super_Gyros_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Super_Gyros_Page' });
+  },
+});
+
+FlowRouter.route('/bean-counter', {
+  name: 'Bean_Counter_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Bean_Counter_Page' });
+  },
+});
+
+FlowRouter.route('/uahi-island', {
+  name: 'Uahi_Island_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Uahi_Island_Page' });
+  },
+});

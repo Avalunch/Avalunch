@@ -8,34 +8,6 @@ FlowRouter.route('/', {
   },
 });
 
-FlowRouter.route('/da-spot', {
-  name: 'Da_Spot_Page',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'Da_Spot_Page' });
-  },
-});
-
-FlowRouter.route('/domino', {
-  name: 'Domino_Page',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'Domino_Page' });
-  },
-});
-
-FlowRouter.route('/honolulu-gourmet', {
-  name: 'Honolulu_Gourmet_Page',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'Honolulu_Gourmet_Page' });
-  },
-});
-
-FlowRouter.route('/green-garden', {
-  name: 'Green_Garden_Page',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'Green_Garden_Page' });
-  },
-});
-
 FlowRouter.route('/login', {
   name: 'Login_Page',
   action() {
@@ -71,14 +43,6 @@ FlowRouter.route('/upper_campus', {
     BlazeLayout.render('App_Body', { main: 'Upper_campus' });
   },
 });
-
-FlowRouter.route('/jamba_juice', {
-  name: 'jamba_juice',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'jamba_juice' });
-  },
-});
-
 
 FlowRouter.route('/your_profile', {
   name: 'Your_profile',
