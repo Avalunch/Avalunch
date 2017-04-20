@@ -37,3 +37,30 @@ import './jamba_juice.js';
 import './aboutus.html';
 
 import '/imports/ui/templates/';
+
+import './india-cafe.html';
+import './india-cafe.js';
+
+import './l-and-l.html';
+import './l-and-l.js';
+
+import './le-crepe-cafe.html';
+import './le-crepe-cafe.js';
+
+import './panda-express.html';
+import './panda-express.js';
+
+import './serg-mexican-kitchen.html';
+import './serg-mexican-kitchen.js';
+
+import './super-gyros.html';
+import './super-gyros.js';
+
+import './the-bean-counter.html';
+import './the-bean-counter.js';
+
+import './the-curb.html';
+import './the-curb.js';
+
+import './uahi-island-grill.html';
+import './uahi-island-grill.js';
