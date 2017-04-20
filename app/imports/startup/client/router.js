@@ -69,3 +69,10 @@ FlowRouter.notFound = {
     BlazeLayout.render('App_Body', { main: 'App_Not_Found' });
   },
 };
+
+FlowRouter.route('/maps', {
+  name: 'maps',
+  action() {
+    BlazeLayout.render('about_us', { aboutsub: 'maps' });
+  },
+});
