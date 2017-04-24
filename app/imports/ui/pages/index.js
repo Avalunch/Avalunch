@@ -67,3 +67,27 @@ import './the-curb.js';
 
 import './uahi-island-grill.html';
 import './uahi-island-grill.js';
+
+import './ba-le.html';
+import './ba-le.js';
+
+import './food-court.html';
+import './food-court.js';
+
+import './gateway.html';
+import './gateway.js';
+
+import './hale-aloha.html';
+import './hale-aloha.js';
+
+import './kamitoku-ramen.html';
+import './kamitoku-ramen.js';
+
+import './pizza-hut.html';
+import './pizza-hut.js';
+
+import './simply-to-go.html';
+import './simply-to-go.js';
+
+import './market.html';
+import './market.js';
