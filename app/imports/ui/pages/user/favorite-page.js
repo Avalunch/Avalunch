@@ -1,4 +1,9 @@
 import { Template } from 'meteor/templating';
-// import { list } from '../api/list/food-list.js';
+// import { list } from 'imports/api/list/food-list.js';
 
-Template.Favorite_Page.events({});
+Template.Favorite_Page.helpers({
+  favorites() {
+    return '';
+  },
+});
+
