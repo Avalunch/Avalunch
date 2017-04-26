@@ -51,13 +51,7 @@ export const menu = [
 
 Template.Domino_Page.helpers({
   menu() {
-    return menu;
-  },
-    return entre;
-  },
-  drinks() {
-    return entre;
-  },
+    return menu; },
   drinks() {
     return entre;
   },
