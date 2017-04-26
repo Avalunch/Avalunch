@@ -1,59 +1,25 @@
 <template name="Your_profile">
-<style>
-body {
-  font: normal 14px/20px 'Open Sans', sans-serif;
-  background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%,#DDF0E4   100%);
-  color: #333;
-}
-</style>
-<body>
-  <div class="wrap">
-    <div class="right-menu">
-      <a  class="active" href="#profile"><i class="fa fa-user"></i><span>Profile</span></a>
-      <a href="#project"><i class="fa fa-photo"></i><span>Number</span></a>
-      <a  href="#skills"><i class="fa fa-folder"></i><span>Rating</span></a>
-    </div>
-    <div class="content">
-      <div class="profile open animated zoomIn">
-        <div class="avatar">
-          <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQDVx9K9xAnaIBVZDhyw7nmuu1qlgyIn7Jd2K--4yproqtvonQw3g">
-          <div class="bubble">
-            <h3>Wolverine</h3>
-            <a href="#">Wolverine@email.com</a>
-          </div>
+  <div class="ui container">
+    <form class="ui form student-data-form {{ errorClass }}">
+      <h3 class="ui dividing header">Enter your information</h3>
 
+      <div class="field">
+        <div class="two fields">
+          {{> Text_Form_Control name="First Name" label="firstName" required=true errorMessage=(fieldError "firstName")}}
+          {{> Text_Form_Control name="Last Name" label="lastName" required=true errorMessage=(fieldError "lastName")}}
         </div>
       </div>
-      <div class="project animated zoomIn">
-        <div class="avatar">
+      {{> Text_Form_Control name="Your Restaurants" label="address" required=true errorMessage=(fieldError "address")}}
 
-          <div class="bubble">
-            <h3>Coming Soon</h3>
-            <a href="#">View Details </a>
-
-          </div>
-
+      <div class="field">
+        <div class="two fields">
+          {{> Text_Form_Control name="Telephone" label="telephone" required=true errorMessage=(fieldError "telephone")}}
+          {{> Text_Form_Control name="E-Mail" label="email" required=true errorMessage=(fieldError "email")}}
         </div>
       </div>
 
-      <div class="skills animated zoomIn">
-        <div class="avatar">
+      <button class="ui primary button">Submit</button>
 
-          <div class="bubble">
-            <h3>Coming Soon</h3>
-            <a href="#">View Details </a>
-
-          </div>
-
-        </div>
-      </div>
-    </div><!--End Content-->
-    <div class="ui aligned center footer">
-      <a href="" target="_blank"><i class="fa fa-link"></i><span>Favorite Food</span></a>
-      <a href=""  target="_blank"><i class="fa fa-codepen"></i><span>My Order</span></a>
-      <a href=""  target="_blank"><i class="fa fa-twitter"></i><span>My Total</span></a>
-
-    </div>
+    </form>
   </div>
-  </body>
 </template>
