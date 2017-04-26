@@ -25,6 +25,7 @@ export const menu = [
 
 Template.jamba_juice.helpers({
   menu() {
+<<<<<<< HEAD
     return menu;
   },
   entre() {
@@ -32,6 +33,11 @@ Template.jamba_juice.helpers({
   },
   drinks() {
     return drinks;
+=======
+    return menu; },
+  drinks() {
+    return entre;
+>>>>>>> master
   },
   deserts() {
     return deserts;
