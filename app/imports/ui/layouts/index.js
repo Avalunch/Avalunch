@@ -9,3 +9,5 @@ import './if-logged-in.js';
 import './loading.html';
 import '../pages/search-page.html';
 import '../pages/search-page.js';
+import './cas-login.html';
+import './cas-login.js';

@@ -1,15 +1,13 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
-import { Contacts } from '../../api/contacts/contacts.js';
+
+/* eslint-disable object-shorthand */
 
 Template.Home_Page.helpers({
-
   /**
-   * @returns {*} All of the Contacts documents.
+   * @returns {String} Returns the user who's logged in
    */
-  contactsList() {
-    return Contacts.find();
+  user: function user() {
+    return Meteor.user() ? Meteor.user().profile.name : 'No logged in user';
   },
-});
-Template.Home_Page.onCreated(function onCreated() {
-  this.subscribe('Contacts');
 });
