@@ -11,3 +11,4 @@ import '../pages/search-page.html';
 import '../pages/search-page.js';
 import './cas-login.html';
 import './cas-login.js';
+import './upper-campus.html';

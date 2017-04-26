@@ -25,16 +25,19 @@ p, h1, h2 {
   color:white;
 }
 
-
+/*
 .ui.inverted.menu{
   background-color:	white;
 
 }
+*/
 
 #login-buttons a, .accounts-dialog a {
   color:white;
 }
 /* css declaration for menu*/
+/*
+
 *, *:before, *:after {
   -moz-box-sizing:
           border-box;
@@ -96,7 +99,7 @@ nav li li{
   float:none
 }
 nav .dropdown ul{
-  //position:absolute;
+  position:absolute;
   left:0;
   top:100%;
   background:#fff;
@@ -136,6 +139,7 @@ nav li li a:hover{text-decoration:underline;}
   .mega-col{width:100%}
 }
 
+*/
 
 /* scss declaration for animation */
 
@@ -445,7 +449,7 @@ a.active:after {
   bottom: 0;
   width: 100%;
   min-height: 100px;
-  //position: absolute;
+  position: absolute;
   border-top: 1px solid #9E9AAB;
 }
 
