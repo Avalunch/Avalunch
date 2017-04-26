@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<template name="Your_Profile1">
+  <body style="height: 60vh;">
+
+  <div class="ui three column grid" style="margin-top: 50px; margin-right: 30px; margin-left: 30px;">
+
+    <!-- Avatar Display -->
+    <div class="column">
+      <div class="ui card">
+        <div class="image">
+          <img src="/images/kristy.png">
+        </div>
+        <div class="content">
+          <a class="header">{{ users.profile }}</a>
+          <div class="meta">
+            <span class="date">Account Name: {{ user }}</span>
+          </div>
+          <div class="description">
+            {{ users.bio }}
+          </div>
+        </div>
+        <div class="extra content">
+          <a>
+            <i class="twitter icon"></i>
+            {{ users.tweets }} Tweets
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Preferences -->
+    <div class="column">
+      <div class="ui segment">
+        <div class="text"></div>
+      </div>
+    </div>
+
+    <!-- Edit Avatar Display -->
+    <div class="column">
+      <div class="ui segment">
+
+      </div>
+    </div>
+  </div>
+
+  </body>
+</template>

@@ -1,7 +1,9 @@
 /**
  * Created by Xla on 4/17/17.
+ * Edited by Unjammy.
  */
 
+/*
 $(function () {
 
   $('.right-menu a').click(function(){
@@ -17,3 +19,6 @@ $(function () {
 
 
 });
+*/
+
+

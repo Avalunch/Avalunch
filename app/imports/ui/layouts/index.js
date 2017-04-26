@@ -12,3 +12,8 @@ import '../pages/search-page.js';
 import './cas-login.html';
 import './cas-login.js';
 import './upper-campus.html';
+import './campus-center.html';
+import './paradise-palms.html';
+import './lower-campus.html';
+import './search.html';
+import './profile.html';

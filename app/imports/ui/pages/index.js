@@ -89,3 +89,6 @@ import './simply-to-go.js';
 
 import './market.html';
 import './market.js';
+
+import './profile-page.html';
+import './profile-page.js';

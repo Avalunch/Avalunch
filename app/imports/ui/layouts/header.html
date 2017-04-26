@@ -17,18 +17,10 @@ body {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- End header include statements with this line -->
-
+  <div class="header">
   <!-- App Branding on Every Page -->
-  <div id="brand-name">
-    <h1>AvaLunch at UH Manoa</h1>
-  </div>
-  <div class="ui top borderless inverted menu">
 
-    <div class="ui container">
-      <a class="item" href="{{pathFor 'Home_Page'}}"><h2>Home</h2></a>
-      {{> Upper_Campus }}
-      {{> Cas_Login }}
-    </div>
+    <div class="text" style="padding-bottom: 50px;" id="brand-name"><h1>AvaLunch at UH Manoa</h1></div>
 
 
 
@@ -116,9 +108,28 @@ body {
         </li>
       </ul>
     </nav> -->
+  <!-- End App Branding with this line -->
+
+  <!-- Nav Menu -->
+  <div class="ui top fixed borderless inverted menu" style="margin-top:55px">
+
+    <div class="ui container">
+      <a class="item" href="{{pathFor 'Home_Page'}}"><h2>My Menu</h2></a>
+      {{> Upper_Campus_Nav }}
+      {{> Campus_Center_Nav }}
+      {{> Paradise_Palms_Nav }}
+      {{> Lower_Campus_Nav }}
+      {{> Search_Nav }}
+      {{#if currentUser}}
+      {{> Profile_Nav }}
+      {{/if}}
+      {{> Cas_Login }}
+
+    </div>
   </div>
 
+  <!-- End Nav Menu with this line -->
+  </div>
 
-  <!-- End App Branding with this line -->
 </body>
 </template>

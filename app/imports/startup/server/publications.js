@@ -8,3 +8,4 @@ import { Meteor } from 'meteor/meteor';
 Meteor.publish('Menu', function publishMenuData() {
   return Menu.find();
 });
+
