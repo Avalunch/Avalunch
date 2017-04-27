@@ -33,6 +33,10 @@ Template.Your_Profile1.helpers({
   usersList() {
     return Users.find();
   },
+  currentUser: function () {
+    const currentUser = Meteor.user().profile.name;
+    return Users.find({ profile: 'default' });
+  },
   usersDataField(fieldName) {
     const usersData = Users.findOne(this.user());
     // See https://dweldon.silvrback.com/guards to understand '&&' in next line.

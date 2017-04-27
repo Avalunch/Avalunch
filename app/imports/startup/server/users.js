@@ -7,6 +7,7 @@ import { _ } from 'meteor/underscore';
  */
 const usersSeeds = [
   {
+    profile: 'default',
     first: 'Firstname',
     last: 'Lastname',
     bio: 'Lorem Ipsum.',

@@ -1,13 +1,16 @@
-import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
-
-/* eslint-disable object-shorthand */
+import { Users } from '../../api/users/users.js';
 
 Template.Home_Page.helpers({
+
   /**
-   * @returns {String} Returns the user who's logged in
+   * @returns {*} All of the Users documents.
    */
-  user: function user() {
-    return Meteor.user() ? Meteor.user().profile.name : 'No logged in user';
+  usersList() {
+    return Users.find();
   },
+});
+
+Template.Home_Page.onCreated(function onCreated() {
+  this.subscribe('Users');
 });

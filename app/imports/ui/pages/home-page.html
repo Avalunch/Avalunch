@@ -3010,12 +3010,15 @@ Foul+j+Tw9A1NKDbCwAAAABJRU5ErkJggg==
           <h4>Your Top Choice:</h4>
           <img class="ui tiny image" src="/images/avalunch-logo.svg">
         </div>
-        <div class="menu-box ui card">
+        <div class="menu-box">
+          {{#each user in usersList}}
           <ul>
-            <li>Restaurant: </li>
-            <li>Location: </li>
-            <li>Menu: </li>
+            <li>{{user.first}}</li>
+            <li>{{user.last}}</li>
+            <li>{{user.bio}}</li>
+            <li>{{user.twitter}}</li>
           </ul>
+          {{/each}}
         </div>
       </div>
   </div>

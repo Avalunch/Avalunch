@@ -10,18 +10,18 @@
           <img src="/images/kristy.png">
         </div>
         <div class="content">
-          <a class="header">{{ usersDataField(first) }} {{ usersDataField(last) }}</a>
+          <a class="header">{{ currentUser.first }} {{ currentUser.last }}</a>
           <div class="meta">
             <span class="date">Account Name: {{ user }}</span>
           </div>
           <div class="description">
-            {{ users.bio }}
+            {{ currentUser.bio }}
           </div>
         </div>
         <div class="extra content">
           <a>
             <i class="twitter icon"></i>
-            {{ users.twitter }}
+            {{ currentUser.twitter }}
           </a>
         </div>
       </div>

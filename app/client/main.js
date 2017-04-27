@@ -5,3 +5,4 @@ import '/imports/ui/pages';
 import '/imports/ui/templates/';
 import '/imports/ui/stylesheets/style.scss';
 import '/imports/ui/components/form-controls/';
+import '/imports/api/users';
