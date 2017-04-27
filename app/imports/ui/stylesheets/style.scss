@@ -25,16 +25,19 @@ p, h1, h2 {
   color:white;
 }
 
-
+/*
 .ui.inverted.menu{
   background-color:	white;
 
 }
+*/
 
 #login-buttons a, .accounts-dialog a {
   color:white;
 }
 /* css declaration for menu*/
+/*
+
 *, *:before, *:after {
   -moz-box-sizing:
           border-box;
@@ -136,6 +139,7 @@ nav li li a:hover{text-decoration:underline;}
   .mega-col{width:100%}
 }
 
+*/
 
 /* scss declaration for animation */
 
@@ -548,4 +552,28 @@ opacity:0.7;
   .right {
     width: 60%;
   }
+}
+
+#brand-name {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+
+
+.menu-box {
+  margin-top: 10vh;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  background: peru;
+  color: white;
+  border: 10px solid;
+  border-color: black;
+  border-radius: 5px;
+}
+
+body {
+  background-color: #DDF0E4;
 }
