@@ -52,9 +52,9 @@ FlowRouter.route('/upper_campus', {
 });
 
 FlowRouter.route('/your_profile', {
-  name: 'Your_Profile1',
+  name: 'Your_profile',
   action() {
-    BlazeLayout.render('App_Body', { main: 'Your_Profile1' });
+    BlazeLayout.render('App_Body', { main: 'Your_profile' });
   },
 });
 

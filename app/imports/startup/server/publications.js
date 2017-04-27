@@ -1,10 +1,14 @@
 /**
  * Created by Xla on 3/13/17.
  */
-import { Users } from '../../api/users/users.js';
+import { Contacts } from '../../api/contacts/contacts.js';
+import { Menu } from '../../api/menu/menu.js';
 import { Meteor } from 'meteor/meteor';
 
-Meteor.publish('Users', function publishUsersData() {
-  return Users.find();
+Meteor.publish('Contacts', function publishContactsData() {
+  return Contacts.find();
 });
 
+Meteor.publish('Menu', function publishMenuData() {
+  return Menu.find();
+});

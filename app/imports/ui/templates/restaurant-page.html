@@ -39,17 +39,17 @@
   }}
    <script type="text/javascript" src="jquery-1.8.3.js"></script>
 <style>
-
+ 
 
   a {
-
+    
     text-decoration: none;
     color: #000;
     font-size: 12px;
     line-height: 40px;
   }
 
-
+  
 
 </style>
 
@@ -60,44 +60,36 @@
 
       <nav>
         <ul>
-          <li>{{#if entre}}<a href="#entre">Entre</a>{{else}}
-            {{/if}}</li>
-          <li>{{#if drinks}}<a href="#drinks">Drinks</a>{{else}}
-            {{/if}}</li>
-          <li>{{#if deserts}}<a href="#deserts">Deserts</a>{{else}}
-            {{/if}}</li>
+          <li><a href="#entre">Entre</a></li>
+          <li><a href="#drinks">Drinks</a></li>
+          <li><a href="#deserts">Deserts</a></li>
           <li><a href="#info">Contact and Information</a></li>
         </ul>
-      </nav><a class="menu-button" href="#">Add Items to your profile</a>
+      </nav><a class="menu-button" href="#">Menu</a>
     </div>
     <div style="background-color: black; opacity:0.9" class="text">
       <h1>{{name}}</h1>
-      {{#if entre}}
+    
       <p id="entre" >Entre</p>
       <p>{{#each item in entre}}
+
        <div class="ui list">
           <div class="content">
-            <div class="header">{{item.name}} {{item.price}}</div>
+            <div class="header">{{item.name}}, {{item.price}}</div>
           </div>
         </div>
       {{/each}}</p>
-      {{else}}
-      {{/if}}
-      {{#if drinks}}
       <p id="drinks">Drinks</p>
-
-      <p>{{#each item in drinks}}
+      <p>
+        {{#each item in drinks}}
 
         <div class="ui list">
           <div class="content">
-            <div class="header">{{item.name}} {{item.price}}</div>
+            <div class="header">{{item.name}}, {{item.price}}</div>
           </div>
         </div>
       {{/each}}
       </p>
-      {{else}}
-      {{/if}}
-      {{#if deserts}}
       <p id="deserts">Deserts</p>
       <p>{{#each item in deserts}}
 
@@ -107,13 +99,8 @@
           </div>
         </div>
       {{/each}}</p>
-      {{else}}
-      {{/if}}
       <p id="info">Contact and Information</p>
-
-      <p>{{contact_info}} </p>{{hours}}<br>
-      <div > {{#if hours}}{{else}}{{/if}}</div>{{location}}<br>
-      <div > {{#if location}}{{else}}{{/if}}</div>
+      <p>{{info}}</p>
       <script type="text/javascript">
   $('.menu-button').click(function() {
     $('nav').toggleClass('active');
@@ -121,12 +108,12 @@
 </script>
     </div>
   </div>
-  <div  style=" height:500px; width:800px; top:800px">
-    <img src="{{image}}"></div>
+  <div class="right"><img src="https://userscontent2.emaze.com/images/8434fb37-db0b-4ff1-b70b-33e5efe49f51/226aecb095ac6bc55803b0e2da2b362b.png"></div>
 </div>
   <div class="ui center aligned container">
+    <img class="ui small left floated image" src="{{image}}">
 
-    <h1 class="ui header">Your Order</h1>
+    <h1 class="ui header">{{name}}</h1>
 
     <p class="text">{{info}}</p>
 
@@ -147,7 +134,7 @@
           </div>
         </div>
       {{/each}}
-      <div class="ui fluid green button">View your all your items</div>
+
     </div>
   </div>
 </template>

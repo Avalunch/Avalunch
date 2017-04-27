@@ -1,16 +1,15 @@
 import { Template } from 'meteor/templating';
-import { Users } from '../../api/users/users.js';
+import { Contacts } from '../../api/contacts/contacts.js';
 
 Template.Home_Page.helpers({
 
   /**
-   * @returns {*} All of the Users documents.
+   * @returns {*} All of the Contacts documents.
    */
-  usersList() {
-    return Users.find();
+  contactsList() {
+    return Contacts.find();
   },
 });
-
 Template.Home_Page.onCreated(function onCreated() {
-  this.subscribe('Users');
+  this.subscribe('Contacts');
 });

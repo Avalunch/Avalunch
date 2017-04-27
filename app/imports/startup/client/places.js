@@ -2,7 +2,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
 FlowRouter.route('/jamba_juice', {
-  name: 'Jamba_Juice',
+  name: 'jamba_juice',
   action() {
     BlazeLayout.render('App_Body', { main: 'jamba_juice' });
   },
