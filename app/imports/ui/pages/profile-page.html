@@ -10,7 +10,7 @@
           <img src="/images/kristy.png">
         </div>
         <div class="content">
-          <a class="header">{{ users.profile }}</a>
+          <a class="header">{{ usersDataField(first) }} {{ usersDataField(last) }}</a>
           <div class="meta">
             <span class="date">Account Name: {{ user }}</span>
           </div>
@@ -21,7 +21,7 @@
         <div class="extra content">
           <a>
             <i class="twitter icon"></i>
-            {{ users.tweets }} Tweets
+            {{ users.twitter }}
           </a>
         </div>
       </div>
