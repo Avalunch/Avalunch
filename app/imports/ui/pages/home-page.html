@@ -12,9 +12,107 @@ body {
     {{#if Template.subscriptionsReady}}
 
     <!-- Start Single-Page App area inside this code block -->
-    <div class="ui grid">
-    <div class="ui nine wide column">
-      <svg
+    <div class="ui grid" style="margin-top: 20px; position:relative;">
+    <div class="ui eleven wide column">
+      <div class="ui two column grid">
+        <div class="two column row">
+          <div class="column">
+            <div class="ui card">
+              <div class="image">
+                <img src="http://www.hawaii.edu/campuscenter/services/images/CCCourtyard.jpg">
+              </div>
+              <div class="content">
+                <a class="header">Campus Center</a>
+                <div class="meta">
+                  <span class="name">4 Restaurants</span>
+                </div>
+                <div class="description">
+                  Get A Recommendation:
+                  <button class="ui button">Go!</button>
+                </div>
+              </div>
+              <div class="extra content">
+                <a>
+                  <i class="twitter icon"></i>
+                  <button class="ui button">Tweet</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui card">
+              <div class="image">
+                <img src="https://uonse.files.wordpress.com/2014/01/20140130-133207.jpg">
+              </div>
+              <div class="content">
+                <a class="header">Upper Campus</a>
+                <div class="meta">
+                  <span class="name">7 Restaurants</span>
+                </div>
+                <div class="description">
+                  Get A Recommendation:
+                  <button class="ui button">Go!</button>
+                </div>
+              </div>
+              <div class="extra content">
+                <a>
+                  <i class="twitter icon"></i>
+                  <button class="ui button">Tweet</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="two column row">
+          <div class="column">
+            <div class="ui card">
+              <div class="image">
+                <img src="http://manoa.hawaii.edu/food/paradisePalms_files/stacks_image_27.png">
+              </div>
+              <div class="content">
+                <a class="header">Paradise Palms</a>
+                <div class="meta">
+                  <span class="name">7 Restaurants</span>
+                </div>
+                <div class="description">
+                  Get A Recommendation:
+                  <button class="ui button">Go!</button>
+                </div>
+              </div>
+              <div class="extra content">
+                <a>
+                  <i class="twitter icon"></i>
+                  <button class="ui button">Tweet</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui card">
+              <div class="image">
+                <img src="http://the.honoluluadvertiser.com/dailypix/2008/Apr/14/hawaii804140348AR_b.jpg">
+              </div>
+              <div class="content">
+                <a class="header">Lower Campus</a>
+                <div class="meta">
+                  <span class="name">5 Restaurants</span>
+                </div>
+                <div class="description">
+                  Get A Recommendation:
+                  <button class="ui button">Go!</button>
+                </div>
+              </div>
+              <div class="extra content">
+                <a>
+                  <i class="twitter icon"></i>
+                  <button class="ui button">Tweet</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:-750px;"><svg
 
 
       version="1.1"
@@ -3003,23 +3101,28 @@ Foul+j+Tw9A1NKDbCwAAAABJRU5ErkJggg==
                           x="152.606" /><polyline
                           id="polyline10008"
                           points="202.615,221.111 199.696,225.441 196.699,221.142   " /><g
-                          id="g10014" /></g></g></g></svg>
+          id="g10014" /></g></g></g></svg></div>
     </div>
       <div class="ui five wide column">
-        <div class="menu-box ui card">
-          <h4>Your Top Choice:</h4>
-          <img class="ui tiny image" src="/images/avalunch-logo.svg">
-        </div>
-        <div class="menu-box">
-          {{#with current}}
-          <ul>
-            <li>{{current.first}}</li>
-            <li>{{current.last}}</li>
-            <li>{{current.profile}}</li>
-            <li>{{current.bio}}</li>
-            <li>{{current.twitter}}</li>
-          </ul>
-          {{/with}}
+        <div id="menu-box">
+          <div class="ui container">
+            <div class="text"><h3>Your Recommendation:</h3></div>
+            <hr>
+            {{#each thing in menuList}}
+            <div class="text">Try {{ thing.item }}:</div>
+                <ul>
+                  <li>{{thing.tag}}</li>
+                  <li>{{thing.restaurant}}</li>
+                  <li>{{thing.price}}</li>
+                </ul>
+            {{/each}}
+
+
+            <button class="ui fluid twitter button">
+              <i class="large twitter icon">Tweet</i>
+            </button>
+
+          </div>
         </div>
       </div>
   </div>

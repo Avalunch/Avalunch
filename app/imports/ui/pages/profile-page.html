@@ -8,20 +8,20 @@
         <div class="image">
           <img src="/images/kristy.png">
         </div>
-        {{#with currentUser }}
+        {{#with current }}
         <div class="content">
-          <a class="header">{{ first }}</a>
+          <a class="header">{{ current.first }}</a>
           <div class="meta">
-            <span class="name">Account Name: {{ profile }} </span>
+            <span class="name">Account Name: {{ current.profile }} </span>
           </div>
           <div class="description">
-            {{ bio }}
+            {{ current.bio }}
           </div>
         </div>
         <div class="extra content">
           <a>
             <i class="twitter icon"></i>
-            {{ twitter }}
+            {{ current.twitter }}
           </a>
         </div>
         {{/with}}

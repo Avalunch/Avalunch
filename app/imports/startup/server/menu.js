@@ -7,10 +7,15 @@ import { _ } from 'meteor/underscore';
 
 const menuSeeds = [
   {
-    item: '6-in Meatball Sub',
+    group: 'campus-center',
     restaurant: 'Subway',
+    item: '6-in Meatball Sub',
+    type: 'entre',
+    tag: 'american',
     price: '5.99',
-    tags: 'cheap,',
+    spicy: false,
+    vegetarian: false,
+    vegan: false,
   },
 ];
 

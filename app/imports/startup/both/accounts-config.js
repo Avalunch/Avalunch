@@ -10,7 +10,7 @@ if (Meteor.isClient) {
 }
 */
 
-
+/**
 Accounts.onLogin(function onLogin() {
   const id = Meteor.userId();
   const onLandingPage = FlowRouter.current().path && (FlowRouter.current().path === '/');
@@ -26,3 +26,4 @@ Accounts.onLogout(function logout() {
   FlowRouter.go('/');
 });
 
+*/
