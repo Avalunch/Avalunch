@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
+import { Users } from '/imports/api/users/users.js';
 import { _ } from 'meteor/underscore';
 
 /* eslint-disable no-console */
@@ -19,12 +20,13 @@ import { _ } from 'meteor/underscore';
 /* Validate username, sending a specific error message on failure. */
 Accounts.validateNewUser(function (user) {
   if (user) {
-    const username = user.services.cas.id;
-    if (username && _.contains(Meteor.settings.allowed_users, username)) {
-      return true;
+    const profile = user.services.cas.id;
+    if (!Users.isDefined(profile)) {
+      Users.define({ profile });
+      console.log('creating new user');
     }
   }
-  throw new Meteor.Error(403, 'User not in the allowed list');
+  return true;
 });
 
 

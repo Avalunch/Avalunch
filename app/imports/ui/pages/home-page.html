@@ -3011,14 +3011,15 @@ Foul+j+Tw9A1NKDbCwAAAABJRU5ErkJggg==
           <img class="ui tiny image" src="/images/avalunch-logo.svg">
         </div>
         <div class="menu-box">
-          {{#each user in usersList}}
+          {{#with current}}
           <ul>
-            <li>{{user.first}}</li>
-            <li>{{user.last}}</li>
-            <li>{{user.bio}}</li>
-            <li>{{user.twitter}}</li>
+            <li>{{current.first}}</li>
+            <li>{{current.last}}</li>
+            <li>{{current.profile}}</li>
+            <li>{{current.bio}}</li>
+            <li>{{current.twitter}}</li>
           </ul>
-          {{/each}}
+          {{/with}}
         </div>
       </div>
   </div>

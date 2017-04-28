@@ -1,72 +1,46 @@
 /**
  * Created by clark on 4/14/17.
- * Menu setup for Users Collection.
+ * Users setup for Users Collection.
  */
 
-import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import BaseCollection from '/imports/api/base/base.js';
+import { check } from 'meteor/check';
+import { Meteor } from 'meteor/meteor';
 
 /* eslint-disable object-shorthand */
 
-export const Users = new Mongo.Collection('Users');
+class UserCollection extends BaseCollection {
 
-/**
- * Create the schema for Users
- */
-export const UsersSchema = new SimpleSchema({
-  first: {
-    label: 'first',
-    type: String,
-    optional: false,
-    max: 25,
+  constructor() {
+    super('User', new SimpleSchema({
+      profile: { type: String },
+      // Remainder are optional
+      first: { type: String, optional: true },
+      last: { type: String, optional: true },
+      bio: { type: String, optional: true },
+      avatar: { type: SimpleSchema.RegEx.Url, optional: true },
+      twitter: { type: SimpleSchema.RegEx.Url, optional: true },
+      spicy: { type: Boolean, optional: true },
+      vegetarian: { type: Boolean, optional: true },
+      vegan: { type: Boolean, optional: true },
+      price: { type: Number, optional: true },
+    }));
+  }
 
-  },
-  last: {
-    label: 'last',
-    type: String,
-    optional: false,
-    max: 25,
+  define({ first = 'defaultFirst', last = 'defaultLast', profile, bio = 'default bio', avatar = '', twitter = '', spicy = false, vegetarian = false, vegan = false, price = 10 }) {
+    // make sure required fields are OK.
+    const checkPattern = { first: String, last: String, profile: String, bio: String, avatar: String, twitter: String };
+    check({ first, last, profile, bio, avatar, twitter }, checkPattern);
 
-  },
-  bio: {
-    label: 'bio',
-    type: String,
-    optional: false,
-    max: 150,
+    if (this.find({ profile }).count() > 0) {
+      throw new Meteor.Error(`${profile} is previously defined in another Profile`);
+    }
 
-  },
-  twitter: {
-    label: 'twitter',
-    type: String,
-    optional: false,
-    max: 25,
+    return this._collection.insert({ first, last, profile, bio, avatar, twitter, spicy, vegetarian, vegan, price });
+  }
 
-  },
-  spicy: {
-    label: 'spicy',
-    type: Boolean,
-    optional: true,
 
-  },
-  vegetarian: {
-    label: 'vegetarian',
-    type: Boolean,
-    optional: true,
+}
 
-  },
-  vegan: {
-    label: 'vegan',
-    type: Boolean,
-    optional: true,
-
-  },
-  cheap: {
-    label: 'cheap',
-    type: Number,
-    optional: true,
-    min: 1,
-    max: 25,
-  },
-});
-
-Users.attachSchema(UsersSchema);
+export const Users = new UserCollection();
