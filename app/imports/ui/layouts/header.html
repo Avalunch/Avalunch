@@ -6,7 +6,7 @@ body {
   color: #333;
 }
 </style> -->
-<body>
+
   <!-- Put header include statements below, inside this code block -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
   <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
@@ -17,15 +17,20 @@ body {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- End header include statements with this line -->
-  <div class="header">
+
+
   <!-- App Branding on Every Page -->
+  <div class="header">
 
-    <div class="text" style="padding-bottom: 50px;" id="brand-name"><h1>AvaLunch at UH Manoa</h1></div>
+    <div class="ui row" style="" id="brand-name">
+      <img class="ui tiny floated image" src="/images/logo.gif">
+      <h1>AvaLunch at UH Manoa</h1>
+    </div>
 
+<!--
 
-
-
-   <!-- <nav style="z-index: 3; font-size:18px; font-family:   sans-serif;left 400px">
+<div class="ui container">
+   <nav style="z-index: 3; font-size:18px; font-family:   sans-serif;left 400px">
       <ul style=" background: white; border: none; box-shadow: -5px -5px 5px #888 ">
         <li>
           <a class="item" href="{{pathFor 'Home_Page'}}">Home</a>
@@ -107,11 +112,15 @@ body {
           <a class="sign-in item">Sign In</a>
         </li>
       </ul>
-    </nav> -->
+    </nav>
+  </div>
+  -->
+
   <!-- End App Branding with this line -->
 
   <!-- Nav Menu -->
-  <div class="ui top fixed borderless inverted menu" style="margin-top:55px">
+
+  <div class="ui borderless inverted menu" style="background-color: #00b5ad">
 
     <div class="ui container">
       <a class="item" href="{{pathFor 'Home_Page'}}"><h2>My Menu</h2></a>
@@ -131,5 +140,5 @@ body {
   <!-- End Nav Menu with this line -->
   </div>
 
-</body>
+
 </template>

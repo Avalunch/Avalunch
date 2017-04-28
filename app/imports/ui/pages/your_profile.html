@@ -1,5 +1,6 @@
-<<<<<<< HEAD
+
 <template name="Your_Profile">
+
 
 <style>
 body {
@@ -8,24 +9,28 @@ body {
   color: #333;
 }
 </style>
-<body>
-    <div class="wrap ui container">
-    <div class="right-menu">
-      <a  class="active" href="#profile"><i class="fa fa-user"></i><span>Profile</span></a>
-      <a href="#project"><i class="fa fa-photo"></i><span>Number</span></a>
-      <a  href="#skills"><i class="fa fa-folder"></i><span>Rating</span></a>
-    </div>
-    <div class="content">
-      <div class="profile open animated zoomIn">
-        <div class="avatar">
-          <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQDVx9K9xAnaIBVZDhyw7nmuu1qlgyIn7Jd2K--4yproqtvonQw3g">
-          <div class="bubble">
-            <h3>Wolverine</h3>
-            <a href="#">Wolverine@email.com</a>
-          </div>
 
-=======
-<template name="Your_profile">
+
+    <div class="wrap ui container">
+      <div class="right-menu">
+        <a  class="active" href="#profile"><i class="fa fa-user"></i><span>Profile</span></a>
+        <a  href="{{pathFor 'View_Feed'}}"><i class="fa fa-photo"></i><span>View Feed</span></a>
+        <a  href="{{pathFor 'Edit_Profile'}}"><i class="fa fa-folder"></i><span>Edit Info</span></a>
+      </div>
+      <div class="content">
+        <div class="profile open animated zoomIn">
+          <div class="avatar">
+            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQDVx9K9xAnaIBVZDhyw7nmuu1qlgyIn7Jd2K--4yproqtvonQw3g">
+            <div class="bubble">
+              <h3>{{ currentUser.first }} {{ currentUser.last }}</h3>
+              <div class="text">{{ user }}</div>
+              <div class="text">{{ currentUser.bio }}</div>
+              <div class="text">{{ currentUser.twitter }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   <div class="ui container">
     <form class="ui form student-data-form {{ errorClass }}">
       <h3 class="ui dividing header">Enter your information</h3>
@@ -34,7 +39,6 @@ body {
         <div class="two fields">
           {{> Text_Form_Control name="First Name" label="firstName" required=true errorMessage=(fieldError "firstName")}}
           {{> Text_Form_Control name="Last Name" label="lastName" required=true errorMessage=(fieldError "lastName")}}
->>>>>>> c4cc65f176598b6741996d176a854134eec434c9
         </div>
       </div>
       {{> Text_Form_Control name="Your Restaurants" label="address" required=true errorMessage=(fieldError "address")}}
@@ -46,7 +50,6 @@ body {
         </div>
       </div>
 
-<<<<<<< HEAD
       <div class="skills animated zoomIn">
         <div class="avatar">
 
@@ -58,16 +61,16 @@ body {
 
         </div>
       </div>
+    </form>
     </div>
 
     <div class="ui aligned center footer">
       <a href="" target="_blank"><i class="fa fa-link"></i><span>Favorite Food</span></a>
       <a href=""  target="_blank"><i class="fa fa-codepen"></i><span>My Order</span></a>
       <a href=""  target="_blank"><i class="fa fa-twitter"></i><span>My Total</span></a>
-=======
-      <button class="ui primary button">Submit</button>
->>>>>>> c4cc65f176598b6741996d176a854134eec434c9
 
-    </form>
+      <button class="ui primary button">Submit</button>
+
+
   </div>
 </template>

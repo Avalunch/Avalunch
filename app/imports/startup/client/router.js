@@ -45,9 +45,9 @@ FlowRouter.route('/upper_campus', {
 });
 
 FlowRouter.route('/your_profile', {
-  name: 'Your_Profile1',
+  name: 'Your_Profile',
   action() {
-    BlazeLayout.render('App_Body', { main: 'Your_Profile1' });
+    BlazeLayout.render('App_Body', { main: 'Your_Profile' });
   },
 });
 
@@ -74,5 +74,12 @@ FlowRouter.route('/maps', {
   name: 'maps',
   action() {
     BlazeLayout.render('about_us', { aboutsub: 'maps' });
+  },
+});
+
+FlowRouter.route('/edit-profile', {
+  name: 'Edit_Profile',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Edit_Profile' });
   },
 });

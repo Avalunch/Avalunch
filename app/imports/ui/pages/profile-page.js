@@ -13,14 +13,14 @@ import { Users, UsersSchema } from '../../api/users/users.js';
 
 const displayErrorMessages = 'displayErrorMessages';
 
-Template.Your_Profile1.onCreated(function onCreated() {
+Template.Edit_Profile.onCreated(function onCreated() {
   this.subscribe('Users');
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
-  this.context = UsersSchema.namedContext('Your_Profile1');
+  this.context = UsersSchema.namedContext('Edit_Profile');
 });
 
-Template.Your_Profile1.helpers({
+Template.Edit_Profile.helpers({
   /**
    * @returns {String} Returns the user who's logged in
    */
@@ -33,12 +33,13 @@ Template.Your_Profile1.helpers({
   usersList() {
     return Users.find();
   },
-  currentUser: function () {
-    const currentUser = Meteor.user().profile.name;
-    return Users.find({ profile: 'default' });
+  currentUser: function currentUser() {
+    const name = 'default';
+    const current = (Users.findOne(name) || Users.findOne({ name }) || Users.findOne({ profile: name }));
+    return current;
   },
   usersDataField(fieldName) {
-    const usersData = Users.findOne(this.user());
+    const usersData = Users.findOne(FlowRouter.getParam('_id'));
     // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
     return usersData && usersData[fieldName];
   },

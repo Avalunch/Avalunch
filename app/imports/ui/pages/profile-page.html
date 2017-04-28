@@ -1,5 +1,4 @@
-<template name="Your_Profile1">
-  <body style="height: 60vh;">
+<template name="Edit_Profile">
 
   <div class="ui three column grid" style="margin-top: 50px; margin-right: 30px; margin-left: 30px;">
 
@@ -9,21 +8,23 @@
         <div class="image">
           <img src="/images/kristy.png">
         </div>
+        {{#with currentUser }}
         <div class="content">
-          <a class="header">{{ currentUser.first }} {{ currentUser.last }}</a>
+          <a class="header">{{ first }}</a>
           <div class="meta">
-            <span class="date">Account Name: {{ user }}</span>
+            <span class="name">Account Name: {{ profile }} </span>
           </div>
           <div class="description">
-            {{ currentUser.bio }}
+            {{ bio }}
           </div>
         </div>
         <div class="extra content">
           <a>
             <i class="twitter icon"></i>
-            {{ currentUser.twitter }}
+            {{ twitter }}
           </a>
         </div>
+        {{/with}}
       </div>
     </div>
 
@@ -42,5 +43,4 @@
     </div>
   </div>
 
-  </body>
 </template>

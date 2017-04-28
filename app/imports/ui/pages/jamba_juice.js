@@ -23,9 +23,8 @@ export const menu = [
 ];
 
 
-Template.jamba_juice.helpers({
+Template.Jamba_Juice_Page.helpers({
   menu() {
-<<<<<<< HEAD
     return menu;
   },
   entre() {
@@ -33,15 +32,10 @@ Template.jamba_juice.helpers({
   },
   drinks() {
     return drinks;
-=======
-    return menu; },
-  drinks() {
-    return entre;
->>>>>>> master
   },
-  deserts() {
-    return deserts;
-  }
+  desserts() {
+    return desserts;
+  },
 });
 
 $('.menu-button').click(function() {
