@@ -22,10 +22,12 @@ body {
           <div class="avatar">
             <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQDVx9K9xAnaIBVZDhyw7nmuu1qlgyIn7Jd2K--4yproqtvonQw3g">
             <div class="bubble">
-              <h3>{{ currentUser.first }} {{ currentUser.last }}</h3>
-              <div class="text">{{ user }}</div>
-              <div class="text">{{ currentUser.bio }}</div>
-              <div class="text">{{ currentUser.twitter }}</div>
+              {{#with current}}
+              <h3>{{ current.first }} {{ current.last }}</h3>
+              <div class="text">{{ current.profile }}</div>
+              <div class="text">{{ current.bio }}</div>
+              <div class="text">{{ current.twitter }}</div>
+              {{/with}}
             </div>
           </div>
         </div>

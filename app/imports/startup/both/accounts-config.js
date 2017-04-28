@@ -10,14 +10,14 @@ if (Meteor.isClient) {
 }
 */
 
-/**
+
 Accounts.onLogin(function onLogin() {
   const id = Meteor.userId();
   const onLandingPage = FlowRouter.current().path && (FlowRouter.current().path === '/');
   const initialLogin = (id && onLandingPage);
 
   if (initialLogin) {
-    const userID = Meteor.user().profile.name;
+    const profile = Meteor.user().profile.name;
     FlowRouter.go('/your_profile');
   }
 });
@@ -25,4 +25,4 @@ Accounts.onLogin(function onLogin() {
 Accounts.onLogout(function logout() {
   FlowRouter.go('/');
 });
- */
+

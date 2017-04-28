@@ -2,9 +2,8 @@
  * Created by clark on 4/14/17.
  * Users setup for Users Collection.
  */
-
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import BaseCollection from '/imports/api/base/base.js';
+import BaseCollection from '/imports/api/base/base';
 import { check } from 'meteor/check';
 import { Meteor } from 'meteor/meteor';
 
@@ -33,7 +32,7 @@ class UserCollection extends BaseCollection {
     const checkPattern = { first: String, last: String, profile: String, bio: String, avatar: String, twitter: String };
     check({ first, last, profile, bio, avatar, twitter }, checkPattern);
 
-    if (this.find({ profile }).count() > 0) {
+    if (this._collection.find({ profile }).count() > 0) {
       throw new Meteor.Error(`${profile} is previously defined in another Profile`);
     }
 

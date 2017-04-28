@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
@@ -14,7 +15,7 @@ Template.Home_Page.helpers({
    * @returns {*} All of the Users documents.
    */
   current() {
-    console.log(FlowRouter.getParam('profile'));
+    console.log(Users.findDoc(Meteor.user().profile.name));
     return 'fun'; //Users.findDoc(FlowRouter.getParam('profile'));
   },
 });

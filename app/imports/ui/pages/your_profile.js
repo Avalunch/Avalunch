@@ -2,7 +2,10 @@
  * Created by Xla on 4/17/17.
  * Edited by Unjammy.
  */
-
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { _ } from 'meteor/underscore';
+import { Users } from '/imports/api/users/users.js';
 
 $(function () {
   $('.right-menu a').click(function() {
@@ -14,4 +17,14 @@ $(function () {
     $('.content>div').removeClass('open');
     $(tab).addClass('open');
   });
+});
+
+Template.Your_Profile.onCreated(function onCreated() {
+  this.subscribe(Users.getPublicationName());
+});
+
+Template.Your_Profile.helpers({
+  current() {
+    return Users.findDoc(Meteor.user().profile.name);
+  },
 });

@@ -18,7 +18,7 @@ import { _ } from 'meteor/underscore';
 } */
 
 /* Validate username, sending a specific error message on failure. */
-Accounts.validateNewUser(function (user) {
+Accounts.validateNewUser(function validate(user) {
   if (user) {
     const profile = user.services.cas.id;
     if (!Users.isDefined(profile)) {
