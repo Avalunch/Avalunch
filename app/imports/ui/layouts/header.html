@@ -1,13 +1,5 @@
 <template name="Header">
-<!--<style>
-body {
-  font: normal 14px/20px 'Open Sans', sans-serif;
-  background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%,#DDF0E4   100%);
-  color: #333;
-}
-</style> -->
 
-  <!-- Put header include statements below, inside this code block -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
   <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -27,11 +19,11 @@ body {
       <h1>AvaLunch at UH Manoa</h1>
     </div>
 
-<!--
 
-<div class="ui container">
-   <nav style="z-index: 3; font-size:18px; font-family:   sans-serif;left 400px">
-      <ul style=" background: white; border: none; box-shadow: -5px -5px 5px #888 ">
+
+<div class="ui borderless inverted menu" style="background-color: #00b5ad">
+   <nav style="z-index: 3; font-size:16px; font-family:   sans-serif; left 800px">
+      <ul style=" border: none; box-shadow: -5px -5px 5px #888 ">
         <li>
           <a class="item" href="{{pathFor 'Home_Page'}}">Home</a>
         </li>
@@ -105,39 +97,18 @@ body {
         <li>
           <a class="{{ isActiveRoute 'Search_Page'}} item" href="{{ pathFor 'Search_Page' }}">Directory</a>
         </li>
-        <li>
-          <a class="{{ isActiveRoute 'Your_profile'}} item" href="{{ pathFor 'Your_profile' }}">Your Profile</a>
-        </li>
-        <li>
-          <a class="sign-in item">Sign In</a>
-        </li>
+        <li style="float: right">
+              {{#if currentUser}}  
+               {{> Profile_Nav }} 
+               {{/if}}
+               </li>
+        <lil style="float: right">{{> Cas_Login }} </lil>
+        
       </ul>
     </nav>
   </div>
-  -->
 
-  <!-- End App Branding with this line -->
-
-  <!-- Nav Menu -->
-
-  <div class="ui borderless inverted menu" style="background-color: #00b5ad">
-
-    <div class="ui container">
-      <a class="item" href="{{pathFor 'Home_Page'}}"><h2>My Menu</h2></a>
-      {{> Upper_Campus_Nav }}
-      {{> Campus_Center_Nav }}
-      {{> Paradise_Palms_Nav }}
-      {{> Lower_Campus_Nav }}
-      {{> Search_Nav }}
-      {{#if currentUser}}
-      {{> Profile_Nav }}
-      {{/if}}
-      {{> Cas_Login }}
-
-    </div>
-  </div>
-
-  <!-- End Nav Menu with this line -->
+  
   </div>
 
 
