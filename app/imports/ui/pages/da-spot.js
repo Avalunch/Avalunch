@@ -1,4 +1,5 @@
 import { Template } from 'meteor/templating';
+import { Favorites } from '/imports/api/favorites/database.js';
 
 export const menu = [
   {
@@ -21,6 +22,10 @@ export const menu = [
   },
 ];
 
+Template.Da_Spot_Page.onCreated(function onCreated() {
+  this.subscribe('Favorites');
+});
+
 
 Template.Da_Spot_Page.helpers({
   menu() {
@@ -29,7 +34,14 @@ Template.Da_Spot_Page.helpers({
 });
 
 Template.Da_Spot_Page.events({
-  'click .favorite'(event, instance) {},
+  'click .favorite'(event) {
+    const name = event.target.name;
+    const icon = event.target.icon;
+    const info = event.target.info;
+    const price = event.target.price;
+    const data = { name, icon, info, price };
+    Favorites.insert(data);
+  },
 });
 
 $('.menu-button').click(function () {

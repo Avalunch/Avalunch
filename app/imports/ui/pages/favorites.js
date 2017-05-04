@@ -21,9 +21,6 @@ const sample = [
 
 Template.Favorites_Page.onCreated(function onCreated() {
   this.subscribe('Favorites');
-  _.each(sample, function insert(index) {
-    Favorites.insert(index);
-  });
 });
 
 Template.Favorites_Page.helpers({
