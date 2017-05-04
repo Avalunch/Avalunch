@@ -28,7 +28,9 @@ Template.Da_Spot_Page.helpers({
   },
 });
 
-Template.Da_Spot_Page.events({});
+Template.Da_Spot_Page.events({
+  'click .favorite'(event, instance) {},
+});
 
 $('.menu-button').click(function () {
   $('nav').toggleClass('active');
