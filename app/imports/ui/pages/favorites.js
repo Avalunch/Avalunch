@@ -1,5 +1,4 @@
 import { Template } from 'meteor/templating';
-import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Favorites } from '/imports/api/favorites/database.js';
 
 Template.Favorites_Page.onCreated(function onCreated() {
@@ -14,7 +13,7 @@ Template.Favorites_Page.helpers({
 
 Template.Favorites_Page.events({
   'click .remove'() {
-    Favorites.remove(FlowRouter.getParam('_id'));
-    FlowRouter.go('Favorites_Page');
+    Favorites.remove($('a').id);
+    console.log($('a').id);
   },
 });

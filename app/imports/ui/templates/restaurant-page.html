@@ -137,10 +137,10 @@
       {{#each item in menu}}
         <div class="card">
           <div class="content">
-            <img class="ui left floated mini image" src="{{item.icon}}">
-            <div class="header">{{item.name}}</div>
-            <div class="meta">{{item.price}}</div>
-            <div class="description">{{#if item.info}} {{item.info}} {{else}}{{/if}}</div>
+            <img id="icon" class="ui left floated mini image" src="{{item.icon}}">
+            <div id="name" class="header">{{item.name}}</div>
+            <div id="price" class="meta">{{item.price}}</div>
+            <div id="info" class="description">{{#if item.info}} {{item.info}} {{else}}{{/if}}</div>
           </div>
           <div class="extra content">
             <div class="ui fluid green button favorite">Favorite</div>

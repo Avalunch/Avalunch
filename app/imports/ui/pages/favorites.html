@@ -13,7 +13,7 @@
           <div class="description">{{#if item.info}} {{item.info}} {{else}}{{/if}}</div>
         </div>
         <div class="extra content">
-          <a class="ui fluid red button remove" href="{{pathFor 'Favorites_Dummy_Page' _id=item._id}}">Remove</a>
+          <a class="ui fluid red button remove" id="{{item._id}}">Remove</a>
         </div>
       </div>
     {{/each}}
