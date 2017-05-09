@@ -21,7 +21,6 @@ export const menu = [
   },
 ];
 
-
 Template.Da_Spot_Page.helpers({
   menu() {
     return menu;
