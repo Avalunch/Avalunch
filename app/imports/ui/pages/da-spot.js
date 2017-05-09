@@ -34,13 +34,15 @@ Template.Da_Spot_Page.helpers({
 });
 
 Template.Da_Spot_Page.events({
-  'click .favorite'(event) {
-    const name = event.target.name;
-    const icon = event.target.icon;
-    const info = event.target.info;
-    const price = event.target.price;
-    const data = { name, icon, info, price };
-    Favorites.insert(data);
+  'click .favorite'() {
+    $('.favorite').click(function () {
+      const name = $(this).attr('name');
+      const icon = $(this).attr('icon');
+      const info = $(this).attr('info');
+      const price = $(this).attr('price');
+      const data = { name, icon, info, price };
+      Favorites.insert(data);
+    });
   },
 });
 

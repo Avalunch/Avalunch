@@ -12,10 +12,9 @@ Template.Favorites_Page.helpers({
 });
 
 Template.Favorites_Page.events({
-  'click .remove'(event, instance) {
-    $('a.remove').click(function () {
+  'click .remove'() {
+    $('.remove').click(function () {
       Favorites.remove($(this).attr('id'));
-      console.log($(this).attr('id'));
     });
   },
 });
