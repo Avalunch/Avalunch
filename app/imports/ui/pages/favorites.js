@@ -13,14 +13,9 @@ Template.Favorites_Page.helpers({
 
 Template.Favorites_Page.events({
   'click .remove'(event, instance) {
-    $('.remove').click(function () {
-      Favorites.remove($(this).getAttribute('id').html());
-      console.log($(this).getAttribute('id').html());
+    $('a.remove').click(function () {
+      Favorites.remove($(this).attr('id'));
+      console.log($(this).attr('id'));
     });
   },
-});
-
-$('.remove').click(function () {
-  Favorites.remove($(this).getAttribute('id'));
-  console.log($(this).getAttribute('id'));
 });
