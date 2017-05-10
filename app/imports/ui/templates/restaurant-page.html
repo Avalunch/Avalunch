@@ -37,93 +37,7 @@
             ];
   }
   }}
-   <!--<script type="text/javascript" src="jquery-1.8.3.js"></script>
-<style>
-
-
-  a {
-
-    text-decoration: none;
-    color: #000;
-    font-size: 12px;
-    line-height: 40px;
-  }
-
-
-
-</style>
-
-
-<div class="wrap-flex">
-  <div class="left">
-    <div class="menu">
-
-      <nav>
-        <ul>
-          <li>{{#if entre}}<a href="#entre">Entre</a>{{else}}
-            {{/if}}</li>
-          <li>{{#if drinks}}<a href="#drinks">Drinks</a>{{else}}
-            {{/if}}</li>
-          <li>{{#if deserts}}<a href="#deserts">Deserts</a>{{else}}
-            {{/if}}</li>
-          <li><a href="#info">Contact and Information</a></li>
-        </ul>
-      </nav><a class="menu-button" href="#">Add Items to your profile</a>
-    </div>
-    <div style="background-color: black; opacity:0.9" class="text">
-      <h1>{{name}}</h1>
-      {{#if entre}}
-      <p id="entre" >Entre</p>
-      <p>{{#each item in entre}}
-       <div class="ui list">
-          <div class="content">
-            <div class="header">{{item.name}} {{item.price}}</div>
-          </div>
-        </div>
-      {{/each}}</p>
-      {{else}}
-      {{/if}}
-      {{#if drinks}}
-      <p id="drinks">Drinks</p>
-
-      <p>{{#each item in drinks}}
-
-        <div class="ui list">
-          <div class="content">
-            <div class="header">{{item.name}} {{item.price}}</div>
-          </div>
-        </div>
-      {{/each}}
-      </p>
-      {{else}}
-      {{/if}}
-      {{#if deserts}}
-      <p id="deserts">Deserts</p>
-      <p>{{#each item in deserts}}
-
-        <div class="ui list">
-          <div class="content">
-            <div class="header">{{item.name}}, {{item.price}}</div>
-          </div>
-        </div>
-      {{/each}}</p>
-      {{else}}
-      {{/if}}
-      <p id="info">Contact and Information</p>
-
-      <p>{{contact_info}} </p>{{hours}}<br>
-      <div > {{#if hours}}{{else}}{{/if}}</div>{{location}}<br>
-      <div > {{#if location}}{{else}}{{/if}}</div>
-      <script type="text/javascript">
-  $('.menu-button').click(function() {
-    $('nav').toggleClass('active');
-  });
-</script>
-    </div>
-  </div>
-  <div  style=" height:500px; width:800px; top:800px">
-    <img src="{{image}}"></div>
-</div> -->
+  
  <style>
  .inactive { display: none; }
  .active { border: 1px solid #ccc; }
@@ -149,6 +63,7 @@
                  icon="{{item.icon}}"
                  price="{{item.price}}"
                  info="{{#if item.info}} {{item.info}} {{else}}{{/if}}"
+                 style="bottom:20px; z-index:5"
                  class="ui fluid green button favorite">Favorite</div>
           </div>
         </div>

@@ -39,7 +39,7 @@
                 <li><a class="{{ isActiveRoute 'Simply_Page'}}" href="{{ pathFor 'Simply_Page' }}">Simply To Go</a></li>
               </ul>
               <ul class="mega-col">
-                <li><a class="{{ isActiveRoute 'jamba_juice'}} item" href="{{ pathFor 'jamba_juice' }}">Jamba Juice</a></li>
+                <li><a class="{{ isActiveRoute 'jamba_juice'}}" href="{{ pathFor 'jamba_juice' }}">Jamba Juice</a></li>
                 <li><a class="{{ isActiveRoute 'Pizza_Hut_Page'}}" href="{{ pathFor 'Pizza_Hut_Page' }}">Pizza Hut</a></li>
                 <li><a class="{{ isActiveRoute 'Food_Court_Page'}}" href="{{ pathFor 'Food_Court_Page' }}">Center Campus Food Court</a></li>
                 <li><a class="{{ isActiveRoute 'Serg_Mexican_Page'}}" href="{{ pathFor 'Serg_Mexican_Page' }}">Serg's Mexican Kitchen</a></li>
@@ -95,7 +95,9 @@
             </li>
           </ul>
         </li>
-  
+        <li>
+          <a class="{{isActiveRoute 'Favorites_Page'}}" href="{{ pathFor 'Favorites_Page' }}">Favorites</a>
+          </li>
         <li style="float: right">
               {{#if currentUser}}  
                {{> Profile_Nav }} 

@@ -1,13 +1,8 @@
 
 <template name="Your_Profile">
 
-
-
-
-
-
-
 <style type>
+$blurred-img:http://apis.xogrp.com/media-api/images/27b736f4-fbf3-4b2e-a08c-7f5abaf6d370;
 .upload-button {
     padding: 4px;
     border: 1px solid black;
@@ -18,14 +13,20 @@
 .wrapper{
   width: 100%;
   overflow: hidden;
-  background-image: url('http://apis.xogrp.com/media-api/images/27b736f4-fbf3-4b2e-a08c-7f5abaf6d370');
+  background-image: url('');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
 }
+.cont{
+  -webkit-filter: blur(10px);
+  filter: url('https://www.kingsford.com/wp-content/uploads/2014/11/kfd-howtohamburger-Burgers_5_0391-1024x621.jpg');
+  filter: blur(10px);
+}
 </style>
 <div class="wrapper">
-<div style="position:relative;  top:10px; width:600px; height:400px; border-style: solid" class="ui container aligned centered">
+<img class="cont" style="position: absolute; left:250px; width:800px; height: 750px" src=" https://www.kingsford.com/wp-content/uploads/2014/11/kfd-howtohamburger-Burgers_5_0391-1024x621.jpg">
+<div style="position:relative;  top:10px; width:600px; height:400px" class="ui container aligned centered">
 <img  style=" width:200px; height:200px" class="profile-pic" src="http://cdn.cutestpaw.com/wp-content/uploads/2012/07/l-Wittle-puppy-yawning.jpg" />
 
 <input class="file-upload" type="file" accept="image/*"/>
@@ -54,6 +55,7 @@
   <button class="ui button" type="submit">Submit</button>
 </form>
 </div>
+
 </div>
 
 <script>

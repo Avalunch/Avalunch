@@ -13,8 +13,8 @@
           <div class="meta">{{item.price}}</div>
           <div class="description">{{#if item.info}} {{item.info}} {{else}}{{/if}}</div>
         </div>
-        <div class="extra content">
-          <a class="ui fluid red button remove" id="{{item._id}}">Remove</a>
+        <div  class="extra content">
+          <a style="z-index=3" class="ui fluid red button remove" id="{{item._id}}">Remove</a>
         </div>
       </div>
     {{/each}}
