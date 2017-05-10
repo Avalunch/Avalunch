@@ -3,9 +3,10 @@
 </template>
 
 <template name="Food_Card">
-  <div class="ui cards">
+  <h1 style="padding-left: 10px; font-size: 350%; color: #66ccff; text-shadow: 1px 1px 2px #222" class="ui center aligned text header">Your Favorite Food</h1>
+  <div style="margin: 15px 25px 0px 25px" class="ui three cards">
     {{#each item in list}}
-      <div class="card">
+      <div class="raised fitted card">
         <div class="content">
           {{#if item.icon}}<img class="ui left floated mini image" src="{{item.icon}}">{{else}}{{/if}}
           <div class="header">{{item.name}}</div>
