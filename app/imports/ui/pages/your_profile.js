@@ -7,14 +7,11 @@ import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { _ } from 'meteor/underscore';
 import { Users } from '/imports/api/users/users.js';
-<<<<<<< HEAD
 import { FlowRouter } from 'meteor/kadira:flow-router';
-=======
 
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
 
->>>>>>> m3-profile-finishup
 $(function () {
   $('.right-menu a').click(function() {
     $(this).siblings().removeClass('active');
@@ -59,13 +56,11 @@ Template.Your_Profile.helpers({
   },
 });
 
-<<<<<<< HEAD
 
 
 
 
 
-=======
 Template.Your_Profile.events({
   'submit .profile-data-form'(event, instance) {
     event.preventDefault();
@@ -121,4 +116,3 @@ Template.Your_Profile.events({
     }
   },
 });
->>>>>>> m3-profile-finishup
