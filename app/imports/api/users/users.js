@@ -27,7 +27,16 @@ class UserCollection extends BaseCollection {
     }));
   }
 
-  define({ first = 'defaultFirst', last = 'defaultLast', profile, bio = 'default bio', avatar = '', twitter = '', spicy = false, vegetarian = false, vegan = false, price = 10 }) {
+  define({ first = 'Tommy',
+      last = 'Manoa',
+      profile,
+      bio = 'I\'m Tommy Manoa and UH is pretty cool. ',
+      avatar = '/images/defaultUser.jpeg',
+      twitter = 'https://twitter.com/uhmanoa',
+      spicy = false,
+      vegetarian = false,
+      vegan = false,
+      price = 10 }) {
     // make sure required fields are OK.
     const checkPattern = { first: String, last: String, profile: String, bio: String, avatar: String, twitter: String };
     check({ first, last, profile, bio, avatar, twitter }, checkPattern);

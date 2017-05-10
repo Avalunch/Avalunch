@@ -11,3 +11,4 @@ import './select-form-control';
 import './text-form-control.html';
 import './textarea-form-control.html';
 import '/imports/ui/components/form-controls/';
+import './social-network-form-control';
