@@ -92,9 +92,4 @@ FlowRouter.route('/maps', {
   },
 });
 
-FlowRouter.route('/edit-profile', {
-  name: 'Edit_Profile',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'Edit_Profile' });
-  },
-});
+

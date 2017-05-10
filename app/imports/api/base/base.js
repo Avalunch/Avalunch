@@ -13,6 +13,10 @@ class BaseCollection {
     this._collection.attachSchema(this._schema);
   }
 
+  getSchema() {
+    return this._schema;
+  }
+
   publish() {
     if (Meteor.isServer) {
       Meteor.publish(this._collectionName, () => this._collection.find());
@@ -47,6 +51,12 @@ class BaseCollection {
     !!this._collection.findOne({ name }) ||
     !!this._collection.findOne({ profile: name }) ||
     !!this._collection.findOne({ _id: name }));
+  }
+
+  update(selector, modifier) {
+    const theSelector = (typeof selector === 'undefined') ? {} : selector;
+    this._collection.update(theSelector, modifier);
+    return true;
   }
 }
 

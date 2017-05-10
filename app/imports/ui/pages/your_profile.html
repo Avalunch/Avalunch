@@ -11,29 +11,237 @@ body {
 </style>
 
 
-    <div class="wrap ui container">
+  <div class="ui container profile-portal" id="main">
+
+    <div class="ui three column grid container" style="margin-top: 10px;">
+
+      <div class="ui five wide column">
+
+        <div class="ui card">
+          {{#with current}}
+          <div class="image">
+          <img src="{{ current.avatar }}">
+        </div>
+          <div class="content">
+            <a class="header">{{ current.first }} {{ current.last }}</a>
+            <div class="meta">
+              <span class="name">{{ current.profile }}</span>
+            </div>
+            <div class="description">
+              {{ current.bio }}
+            </div>
+          </div>
+          <div class="content">
+            <a>
+              <i class="twitter icon"></i>
+              {{ current.twitter }}
+            </a>
+          </div>
+          {{/with}}
+        </div>
+
+      </div>
+
+      <div class="ui five wide column">
+
+        <div class="ui feed" style="background-color: white;">
+          <div class="event">
+            <div class="label">
+              <i class="twitter icon"></i>
+            </div>
+            <div class="content">
+              <div class="summary">
+                You tweeted about <a>6-Inch Meatball Sub at Subway</a>!
+                <div class="date">Today</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="ui five wide column">
+        <div class="ui card">
+          <div class="image">
+            <img src="/images/meatball.jpg">
+          </div>
+          <div class="content">
+            <a class="header">6-Inch Meatball Sub</a>
+            <div class="meta">
+              <span class="name">Subway</span>
+            </div>
+          </div>
+          <div class="description">
+           Price: $6.99
+          </div>
+        </div>
+        <div class="ui container" style="background-color: white;">
+          <h3>Get a New Recommendation Above!</h3>
+          <div class="ui selection dropdown">
+            <input type="hidden" name="Restaurant">
+            <i class="dropdown icon"></i>
+            <div class="default text">Restaurants</div>
+            <div class="menu">
+              <div class="item" data-value="1">Subway</div>
+              <div class="item" data-value="0">Uahi Island Grill</div>
+            </div>
+          </div>
+          <button class="ui large blue button">Go!</button>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="ui bottom container" style="margin-top: 10px;">
+      <button class="ui huge right floated teal button">
+        <a href="#profile">Edit Profile Info</a>
+      </button>
+    </div>
+    <div class="ui bottom container" style="margin-top: 10px;">
+      <button class="ui huge right floated teal button">
+        <a href="#preferences">Edit Preferences</a>
+      </button>
+    </div>
+  </div>
+
+  <div class="ui container profile-portal" id="profile">
+
+    <div class="ui top container" style="margin-top: 10px;">
+      <button class="ui huge right floated teal button">
+        <a href="#main">View Profile</a>
+      </button>
+    </div>
+
+    {{#if Template.subscriptionsReady}}
+
+    <div class="ui text container segment">
+      <div class="ui dividing header">
+        Profile
+      </div>
+      <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
+
+        <div class="fields">
+          {{> Text_Form_Control label="First" placeholder="First Name" value=current.first errorMessage=(fieldError "first")}}
+          {{> Text_Form_Control label="Last" placeholder="Last Name" value=current.last errorMessage=(fieldError "last")}}
+        </div>
+
+        <div class="field">
+          {{> Text_Form_Control label="Avatar" placeholder="Avatar" value=current.avatar errorMessage=(fieldError "avatar")}}
+        </div>
+
+
+        <div class="field">
+
+
+          {{> Social_Network_Form_Control label="Twitter" icon="twitter" placeholder="Twitter" value=current.twitter errorMessage=(fieldError "twitter")}}
+
+        </div>
+
+        {{> TextArea_Form_Control label="Bio" value=current.bio placeholder="Short bio statement here" errorMessage=(fieldError "bio")}}
+
+
+        <button class="ui primary button" type="submit">Submit</button>
+        {{#if displaySuccessMessage}}
+        <div class="ui success message">
+          <p>Profile data successfully updated.</p>
+        </div>
+        {{/if}}
+      </form>
+    </div>
+
+    {{/if}}
+    <div class="ui bottom container">
+      <button class="ui huge right floated teal button">
+        <a href="#preferences">Edit Preferences Info</a>
+      </button>
+    </div>
+  </div>
+
+  <div class="ui container profile-portal" id="preferences">
+
+    <div class="ui top container" style="margin-top: 10px;">
+      <button class="ui huge right floated teal button">
+        <a href="#main">View Profile</a>
+      </button>
+    </div>
+
+    <div class="ui top container" style="margin-top: 10px;">
+      <button class="ui huge right floated teal button">
+        <a href="#profile">Edit Profile Info</a>
+      </button>
+    </div>
+
+    {{#if Template.subscriptionsReady}}
+
+    <div class="ui text container segment">
+      <div class="ui dividing header">
+        Preferences
+      </div>
+      <form class="ui equal width form preference-data-form {{ successClass }} {{ errorClass }}">
+
+        <div class="field">
+          {{> Checkbox_Field label="Spicy" checked=current.spicy errorMessage=(fieldError "spicy")}}
+        </div>
+
+        <div class="field">
+          {{> Checkbox_Field label="Vegetarian" checked=current.vegetarian errorMessage=(fieldError "vegetarian")}}
+        </div>
+
+        <div class="field">
+          {{> Checkbox_Field label="Vegan" checked=current.vegan errorMessage=(fieldError "vegan")}}
+        </div>
+
+        <div class="field">
+        {{> TextArea_Form_Control label="Price" value=current.price placeholder="9.00" errorMessage=(fieldError "price")}}
+        </div>
+
+        <button class="ui primary button" type="submit">Submit</button>
+        {{#if displaySuccessMessage}}
+        <div class="ui success message">
+          <p>Profile data successfully updated.</p>
+        </div>
+        {{/if}}
+      </form>
+    </div>
+
+    {{/if}}
+  </div>
+
+  <!--
       <div class="right-menu">
         <a  class="active" href="#profile"><i class="fa fa-user"></i><span>Profile</span></a>
         <a  href="{{pathFor 'View_Feed'}}"><i class="fa fa-photo"></i><span> Coming Soon!</span></a>
         <a  href="{{pathFor 'Edit_Profile'}}"><i class="fa fa-folder"></i><span>Edit Info</span></a>
       </div>
+
       <div class="content">
+        {{#with current}}
         <div class="profile open animated zoomIn">
           <div class="avatar">
-            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQDVx9K9xAnaIBVZDhyw7nmuu1qlgyIn7Jd2K--4yproqtvonQw3g">
+            <img src="{{ current.avatar }}">
             <div class="bubble">
-              {{#with current}}
               <h3>{{ current.first }} {{ current.last }}</h3>
               <div class="text">{{ current.profile }}</div>
               <div class="text">{{ current.bio }}</div>
               <div class="text">{{ current.twitter }}</div>
-              {{/with}}
             </div>
           </div>
         </div>
+        {{/with}}
       </div>
+  <div class="ui menu">
+    <div class="ui container">
+      <div class="ui right item">Edit Profile</div>
     </div>
-  <!--
+  </div>
+  <div class="ui menu">
+    <div class="ui container">
+      <div class="ui right item">Edit Preferences</div>
+    </div>
+  </div>
+
+  <div class="wrap ui container">
+
   <div class="ui container">
     <form class="ui form student-data-form {{ errorClass }}">
       <h3 class="ui dividing header">Enter your information</h3>
@@ -66,7 +274,7 @@ body {
       </div>
     </form>
     </div>
-    -->
+
     <div class="ui aligned center footer">
       <a href="" target="_blank"><i class="fa fa-link"></i><span>Favorite Food</span></a>
       <a href=""  target="_blank"><i class="fa fa-codepen"></i><span>My Order</span></a>
@@ -76,4 +284,5 @@ body {
 
 
   </div>
+  -->
 </template>
