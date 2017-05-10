@@ -1,7 +1,719 @@
 <template name="Super_Gyros_Page">
-{{> Restaurant
-    name="Super Gyros"
-    image="images/meteor-logo.png"
-    info="Greek-style meat or vegetarian pita sandwiches, salads, smoothies, and more are quick, fresh, and healthy."
-    menu=menu}}
+<style>
+@import "{francocatena:compass}/compass";
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+*{
+  font-family: Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+  body{
+  background: #efefef;
+}
+.process__inner{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 1140px;
+  padding: {top:50px;bottom:50px;}
+}
+.process__item{
+	position: relative;
+	padding-left: 0.9375rem;
+	padding-right: 0.9375rem;
+	width: 25%;
+	float: left;
+  @media screen and (max-width: 1024px){
+    width: 50%;
+  }
+	.item__title{
+		text-align: center;
+		font:{
+			size: .75em;
+		}
+		h2{
+      padding-top: 10px;
+      padding-right: 25px;
+      padding-bottom: 10px;
+      padding-left: 25px;
+      color: #fff;
+      background: #56aeea;
+      border-radius: 3px;
+      border: 1px solid #56aeea;
+      transition: color 400ms, background 400ms, border 400ms;
+			margin: {
+        top:10px;}
+			font: {
+				size: 1.5em;
+			}
+			transform: translateX(-50px);
+			transition: transform 400ms, color 400ms, background 400ms, border 400ms;
+		}
+	}
+	.first__svg{    
+     max-height: 124px;
+      margin: 0 auto;
+      width: 100%;
+		opacity: 0;
+		transition: opacity 400ms, max-height 300ms;
+		svg{
+			fill: #efefef;
+		}
+	}
+	.path{
+		stroke-opacity: 0;
+		stroke-dasharray: 1000;
+	}
+	&:hover{
+		.item__title{
+			h2{
+				color: #2b2b2b;
+				border: none;
+				background: none;
+				transform: translateX(900px);
+			}
+		}
+		.first__svg{
+			opacity: 1;
+			max-height: 254px;
+		}
+		
+	}
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Nunito:400,700);
+* {
+  box-sizing: border-box;
+}
+
+
+ .container {
+  box-shadow: 0px 28px 40px -20px rgba(0, 0, 0, 0.33);
+  width: 600px;
+  position: absolute;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
+  margin: auto;
+  right: 0;
+}
+.container_inner {
+  border-radius: 12px;
+}
+.container_inner__list {
+  border-radius: 8px;
+  overflow: hidden;
+}
+.container_inner__list .list_item:nth-of-type(1) label .list_item__image, .container_inner__list .list_item:nth-of-type(1) label .list_item__placeholder {
+  top: 15px;
+  left: 158px;
+}
+.container_inner__list .list_item:nth-of-type(2) label .list_item__image, .container_inner__list .list_item:nth-of-type(2) label .list_item__placeholder {
+  top: 72px;
+  left: 158px;
+}
+.container_inner__list .list_item:nth-of-type(3) label .list_item__image,   .container_inner__list .list_item:nth-of-type(3) label .list_item__placeholder {
+  top: 129px;
+  left: 158px;
+}
+.container_inner__list .list_item:nth-of-type(4) label .list_item__image,  .container_inner__list .list_item:nth-of-type(4) label .list_item__placeholder {
+  top: 186px;
+  left: 158px;
+}
+.container_inner__list .list_item:nth-of-type(5) label .list_item__image,   .container_inner__list .list_item:nth-of-type(5) label .list_item__placeholder {
+  top: 243px;
+  left: 158px;
+}
+ .container_inner__list .list_item:nth-of-type(6) label .list_item__image,   .container_inner__list .list_item:nth-of-type(6) label .list_item__placeholder {
+  top: 300px;
+  left: 158px;
+}
+  .container_inner__list .list_item:nth-of-type(7) label .list_item__image,   .container_inner__list .list_item:nth-of-type(7) label .list_item__placeholder {
+  top: 357px;
+  left: 158px;
+}
+  .container_inner__list .list_item:nth-of-type(8) label .list_item__image,   .container_inner__list .list_item:nth-of-type(8) label .list_item__placeholder {
+  top: 414px;
+  left: 158px;
+}
+  .container_inner__list .list_item:nth-of-type(9) label .list_item__image,   .container_inner__list .list_item:nth-of-type(9) label .list_item__placeholder {
+  top: 471px;
+  left: 158px;
+}
+  .container_inner__list .list_item:nth-of-type(10) label .list_item__image,   .container_inner__list .list_item:nth-of-type(10) label .list_item__placeholder {
+  top: 528px;
+  left: 158px;
+}
+
+  .container_inner__list .list_item:nth-of-type(1) label .list_item__image {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/dd_small.png");
+}
+  .container_inner__list .list_item:nth-of-type(2) label .list_item__image {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/bb_small.png");
+}
+  .container_inner__list .list_item:nth-of-type(3) label .list_item__image {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tf_small.png");
+}
+  .container_inner__list .list_item:nth-of-type(4) label .list_item__image {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/l_small.png");
+}
+  .container_inner__list .list_item:nth-of-type(5) label .list_item__image {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/d_small.png");
+}
+  .container_inner__list .list_item:nth-of-type(6) label .list_item__image {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/pb_small.png");
+}
+
+  .container_inner__list .list_item__image,   .container_inner__list .list_item__placeholder {
+  width: 26px;
+  height: 26px;
+  background-size: 102% !important;
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  top: 0;
+  border-radius: 2px;
+  float: right;
+  -webkit-transition: all 1s 0.1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1s 0.1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+  .container_inner__list .list_item__placeholder {
+  background: #31A993;
+}
+  .container_inner__list .list_item label {
+  padding: 20px;
+  width: 200px;
+  font-weight: normal;
+  cursor: pointer;
+  color: #A5B9C7;
+  font-size: 13px;
+  display: block;
+  background: #536F84;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+  .container_inner__list .list_item label:hover {
+  background: #4C677B;
+}
+  .container_inner__list .list_item label:hover .icon {
+  opacity: 1;
+  left: 20px;
+}
+  .container_inner__list .list_item label:hover span {
+  padding-left: 20px;
+}
+  .container_inner__list .list_item input[type="radio"] {
+  display: none;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label .list_item__feature {
+  display: block;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label .list_item__bg {
+  opacity: .4;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label .list_item__image {
+  position: absolute;
+  top: 20px;
+  left: 220px;
+  width: 80px;
+  height: 80px;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label {
+  background: -webkit-linear-gradient(left, #1DB99D 0%, #32C5AB 100%);
+  background: linear-gradient(left, #1DB99D 0%, #32C5AB 100%);
+  color: white;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label .icon {
+  opacity: 1;
+  left: 20px;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label span {
+  padding-left: 20px;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label .ion-android-star:nth-of-type(1) {
+  -webkit-animation: pop 0.2s 0.2s forwards;
+          animation: pop 0.2s 0.2s forwards;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label .ion-android-star:nth-of-type(2) {
+  -webkit-animation: pop 0.2s 0.25s forwards;
+          animation: pop 0.2s 0.25s forwards;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label .ion-android-star:nth-of-type(3) {
+  -webkit-animation: pop 0.2s 0.3s forwards;
+          animation: pop 0.2s 0.3s forwards;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label .ion-android-star:nth-of-type(4) {
+  -webkit-animation: pop 0.2s 0.35s forwards;
+          animation: pop 0.2s 0.35s forwards;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label .ion-android-star:nth-of-type(5) {
+  -webkit-animation: pop 0.2s 0.4s forwards;
+          animation: pop 0.2s 0.4s forwards;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label .ion-android-star:nth-of-type(6) {
+  -webkit-animation: pop 0.2s 0.45s forwards;
+          animation: pop 0.2s 0.45s forwards;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label .ion-android-star:nth-of-type(7) {
+  -webkit-animation: pop 0.2s 0.5s forwards;
+          animation: pop 0.2s 0.5s forwards;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label .ion-android-star:nth-of-type(8) {
+  -webkit-animation: pop 0.2s 0.55s forwards;
+          animation: pop 0.2s 0.55s forwards;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label .ion-android-star:nth-of-type(9) {
+  -webkit-animation: pop 0.2s 0.6s forwards;
+          animation: pop 0.2s 0.6s forwards;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label .ion-android-star:nth-of-type(10) {
+  -webkit-animation: pop 0.2s 0.65s forwards;
+          animation: pop 0.2s 0.65s forwards;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label h1 {
+  -webkit-animation: pop .2s .1s forwards;
+          animation: pop .2s .1s forwards;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label h2 {
+  -webkit-animation: pop .2s .15s forwards;
+          animation: pop .2s .15s forwards;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label p {
+  -webkit-animation: pop .6s .5s forwards;
+          animation: pop .6s .5s forwards;
+}
+  .container_inner__list .list_item input[type="radio"]:checked + label .watch {
+  -webkit-animation: poptwo .6s .6s forwards;
+          animation: poptwo .6s .6s forwards;
+}
+  .container_inner__list .list_item .icon {
+  position: absolute;
+  left: 0px;
+  font-size: 14px;
+  opacity: 0;
+}
+  .container_inner__list .list_item span,   .container_inner__list .list_item .icon {
+  -webkit-transition: padding .2s,left .2s, opacity .2s;
+  transition: padding .2s,left .2s, opacity .2s;
+}
+  .container_inner__list .list_item__feature {
+  display: none;
+  width: 400px;
+  overflow: hidden;
+  position: absolute;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+  .container_inner__list .list_item__feature .gif {
+  position: absolute;
+}
+  .container_inner__list .list_item__feature .gif_overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.69);
+}
+  .container_inner__list .list_item__feature .information {
+  z-index: 2;
+  position: relative;
+  left: 120px;
+}
+  .container_inner__list .list_item__feature .information h1,   .container_inner__list .list_item__feature .information h2,   .container_inner__list .list_item__feature .information p {
+  opacity: 0;
+  position: relative;
+  top: 7px;
+}
+  .container_inner__list .list_item__feature .information h1 {
+  font-size: 16px;
+  margin: 27px 0px 0px 0px;
+}
+  .container_inner__list .list_item__feature .information h2 {
+  font-size: 12px;
+  margin: 0px 0px 10px 0px;
+}
+  .container_inner__list .list_item__feature .information .ion-android-star {
+  float: left;
+  color: #EAA739;
+  opacity: 0;
+  position: relative;
+  top: 4px;
+  margin-right: 3px;
+}
+  .container_inner__list .list_item__feature .watch {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  opacity: 0;
+  padding: 10px 20px;
+  border-radius: 4px;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  border: 2px solid white;
+}
+  .container_inner__list .list_item__feature .watch:hover {
+  color: #536F84;
+  background: white;
+}
+  .container_inner__list .list_item__feature .watch .ion-android-star {
+  float: left;
+  margin-right: 10px;
+}
+  .container_inner__list .list_item__feature .description {
+ 
+  position: relative;
+  left: 20px;
+  top: 20px;
+}
+  .container_inner__list .list_item__feature .description p {
+  width: 370px;
+  opacity: 0;
+  position: relative;
+  top: 7px;
+  clear: both;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+@-webkit-keyframes pop {
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes pop {
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes poptwo {
+  100% {
+    bottom: 20px;
+    opacity: 1;
+  }
+}
+@keyframes poptwo {
+  100% {
+    bottom: 20px;
+    opacity: 1;
+  }
+}
+@media (max-width: 624px) {
+    .container_inner__list .list_item label {
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  .container {
+    width: 100% !important;
+    padding: 20px;
+  }
+
+    .container_inner__list .list_item__feature {
+    width: 100%;
+    top: 246px;
+    padding: 20px;
+    left: -10px;
+    right: 30px;
+    height: 138px;
+    border-radius: 0px;
+  }
+
+    .container {
+    box-shadow: none;
+  }
+
+    .container_inner__list {
+    border-radius: 0px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
+  }
+
+    .container_inner__list .list_item__feature .gif_overlay {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.69);
+  }
+
+    .container_inner__list .list_item__feature .watch {
+    position: absolute;
+    bottom: auto;
+    top: 60px;
+    left: auto;
+    right: 20px;
+    height: 42px;
+    opacity: 0;
+    padding: 10px 20px;
+    border-radius: 4px;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    border: 2px solid white;
+  }
+
+  .container_inner__list .list_item__feature .description p {
+    width: 100% !important;
+    display: none;
+  }
+
+    .container_inner__list .list_item input[type="radio"]:checked + label .list_item__image {
+    position: absolute;
+    top: 285px !important;
+    left: 31px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .list_item__placeholder {
+    right: 40px !important;
+    left: auto !important;
+  }
+
+    .container_inner__list .list_item:nth-of-type(1) label .list_item__image,   .container_inner__list .list_item:nth-of-type(2) label .list_item__image,   .container_inner__list .list_item:nth-of-type(3) label .list_item__image,   .container_inner__list .list_item:nth-of-type(4) label .list_item__image,   .container_inner__list .list_item:nth-of-type(5) label .list_item__image,   .container_inner__list .list_item:nth-of-type(6) label .list_item__image {
+    right: 40px;
+    left: auto;
+  }
+
+  input[type="radio"]:checked + label .icon {
+    left: 35px !important;
+  }
+
+    .container_inner__list .list_item label:hover .icon {
+    opacity: 1;
+    left: 35px;
+  }
+
+  .list_item:nth-of-type(1) label .list_item__image, .list_item:nth-of-type(1) label .list_item__placeholder {
+    top: 32px !important;
+  }
+  .list_item:nth-of-type(2) label .list_item__image, .list_item:nth-of-type(2) label .list_item__placeholder {
+    top: 72px !important;
+  }
+  .list_item:nth-of-type(3) label .list_item__image, .list_item:nth-of-type(3) label .list_item__placeholder {
+    top: 112px !important;
+  }
+  .list_item:nth-of-type(4) label .list_item__image, .list_item:nth-of-type(4) label .list_item__placeholder {
+    top: 152px !important;
+  }
+  .list_item:nth-of-type(5) label .list_item__image, .list_item:nth-of-type(5) label .list_item__placeholder {
+    top: 192px !important;
+  }
+  .list_item:nth-of-type(6) label .list_item__image, .list_item:nth-of-type(6) label .list_item__placeholder {
+    top: 232px !important;
+  }
+  .list_item:nth-of-type(7) label .list_item__image, .list_item:nth-of-type(7) label .list_item__placeholder {
+    top: 272px !important;
+  }
+  .list_item:nth-of-type(8) label .list_item__image, .list_item:nth-of-type(8) label .list_item__placeholder {
+    top: 312px !important;
+  }
+  .list_item:nth-of-type(9) label .list_item__image, .list_item:nth-of-type(9) label .list_item__placeholder {
+    top: 352px !important;
+  }
+  .list_item:nth-of-type(10) label .list_item__image, .list_item:nth-of-type(10) label .list_item__placeholder {
+    top: 392px !important;
+  }
+}
+@media (max-width: 424px) {
+  .watch {
+    display: none;
+  }
+}
+
+
+
+
+</style>
+
+    <div class="process__inner">
+    <article class="process__item">
+        <div class="first__svg">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 100" enable-background="new 0 0 50 100" xml:space="preserve">
+                <path class="path"><div class='container'>
+  <div class='container_inner'>
+    <div class='container_inner__list'>
+      <div class='list_item'>
+        <input checked='checked' id='movie-Daredevil' name='movie' type='radio'>
+        <label for='movie-Daredevil'>
+          
+          <span>Daredevil</span>
+          <div class='list_item__placeholder'></div>
+          <div class='list_item__image'></div>
+          <div class='list_item__bg'></div>
+          <section class='list_item__feature'>
+            <img class='gif' src='http://www.jamiecoulter.co.uk/dev/codepen/dd_gif.gif'>
+            <div class='gif_overlay'></div>
+            <div class='information'>
+              <h1>Daredevil</h1>
+              <h2>26 episodes</h2>
+              
+            </div>
+            <div class='description'>
+              <p>The first in a planned series of shows detailing the Marvel universe, "Daredevil" follows Matt Murdock, attorney by day and vigilante by night. Blinded in an accident as a child, Murdock uses his heightened senses as Daredevil, fighting crime on the streets of New York after the sun goes down. His efforts are not welcomed by powerful businessman Wilson Fisk -- aka Kingpin -- and others whose interests collide with those of Daredevil</p>
+            </div>
+            <div class='watch'>
+              <div class='ion-android-star'></div>
+              Watch now
+            </div>
+          </section>
+        </label>
+      </div>
+      <div class='list_item'>
+        <input checked='checked' id='movie-Breaking bad' name='movie' type='radio'>
+        <label for='movie-Breaking bad'>
+          <div class='icon ion-ios-videocam'></div>
+          <span>Breaking bad</span>
+          <div class='list_item__placeholder'></div>
+          <div class='list_item__image'></div>
+          <div class='list_item__bg'></div>
+          <section class='list_item__feature'>
+            <img class='gif' src='http://www.jamiecoulter.co.uk/dev/codepen/bb_gif.gif'>
+            <div class='gif_overlay'></div>
+            <div class='information'>
+              <h1>Breaking bad</h1>
+              <h2>62 episodes</h2>
+              
+            </div>
+            <div class='description'>
+              <p>Mild-mannered high school chemistry teacher Walter White thinks his life cant get much worse. His salary barely makes ends meet, a situation not likely to improve once his pregnant wife gives birth, and their teenage son is battling cerebral palsy. But Walter is dumbstruck when he learns he has terminal cancer. Realizing that his illness probably will ruin his family financially, Walter makes a desperate bid to earn as much money as he can in the time he has left by turning an old RV into a meth lab on wheels</p>
+            </div>
+            <div class='watch'>
+              <div class='ion-android-star'></div>
+              Watch now
+            </div>
+          </section>
+        </label>
+      </div>
+      <div class='list_item'>
+        <input checked='checked' id='movie-The flash' name='movie' type='radio'>
+        <label for='movie-The flash'>
+          <div class='icon ion-ios-videocam'></div>
+          <span>The flash</span>
+          <div class='list_item__placeholder'></div>
+          <div class='list_item__image'></div>
+          <div class='list_item__bg'></div>
+          <section class='list_item__feature'>
+            <img class='gif' src='http://www.jamiecoulter.co.uk/dev/codepen/flash_guf.gif'>
+            <div class='gif_overlay'></div>
+            <div class='information'>
+              <h1>The flash</h1>
+              <h2>27 episodes</h2>
+              
+            </div>
+            <div class='description'>
+              <p>Barry Allen is a Central City police forensic scientist with a reasonably happy life, despite the childhood trauma of a mysterious red and yellow being killing his mother and framing his father. All that changes when a massive particle accelerator accident leads to Barry being struck by lightning in his lab. Coming out of coma nine months later, Barry and his new friends at STAR labs find that he now has the ability to move at superhuman speed. Furthermore, Barry learns that he is but one of many affected by that event, most of whom are using their powers for evil</p>
+            </div>
+            <div class='watch'>
+              <div class='ion-android-star'></div>
+              Watch now
+            </div>
+          </section>
+        </label>
+      </div>
+      <div class='list_item'>
+        <input checked='checked' id='movie-Lost' name='movie' type='radio'>
+        <label for='movie-Lost'>
+          <div class='icon ion-ios-videocam'></div>
+          <span>Lost</span>
+          <div class='list_item__placeholder'></div>
+          <div class='list_item__image'></div>
+          <div class='list_item__bg'></div>
+          <section class='list_item__feature'>
+            <img class='gif' src='http://www.jamiecoulter.co.uk/dev/codepen/lost_gif.gif'>
+            <div class='gif_overlay'></div>
+            <div class='information'>
+              <h1>Lost</h1>
+              <h2>3453 episodes</h2>
+              
+            </div>
+            <div class='description'>
+              <p>The survivors of Oceanic Flight 815 were 1,000 miles off course when they crashed on a lush, mysterious island. Each person possesses a shocking secret, but theyve got nothing on the island itself, which harbors a monstrous security system, a series of underground bunkers and a group of violent survivalists hidden in the shadows</p>
+            </div>
+            <div class='watch'>
+              <div class='ion-android-star'></div>
+              Watch now
+            </div>
+          </section>
+        </label>
+      </div>
+      <div class='list_item'>
+        <input checked='checked' id='movie-Dexter' name='movie' type='radio'>
+        <label for='movie-Dexter'>
+          <div class='icon ion-ios-videocam'></div>
+          <span>Dexter</span>
+          <div class='list_item__placeholder'></div>
+          <div class='list_item__image'></div>
+          <div class='list_item__bg'></div>
+          <section class='list_item__feature'>
+            <img class='gif' src='http://www.jamiecoulter.co.uk/dev/codepen/dexter_gif.gif'>
+            <div class='gif_overlay'></div>
+            <div class='information'>
+              <h1>Dexter</h1>
+              <h2>Too many episodes</h2>
+              
+            </div>
+            <div class='description'>
+              <p>Orphaned at age three, when his mother was brutally murdered in a shipping container, and harboring a traumatic secret, Dexter (Michael C. Hall) was adopted by Miami policeman Harry Morgan (James Remar), who recognized his homicidal tendencies and taught him to channel his gruesome passion for killing in a "constructive" way—by killing only heinous criminals (such as child molesters, mob assassins, rapists, serial killers of the innocent, etc.) who have slipped through the justice system</p>
+            </div>
+            <div class='watch'>
+              <div class='ion-android-star'></div>
+              Watch now
+            </div>
+          </section>
+        </label>
+      </div>
+      <div class='list_item'>
+        <input checked='checked' id='movie-Prison break' name='movie' type='radio'>
+        <label for='movie-Prison break'>
+          <div class='icon ion-ios-videocam'></div>
+          <span>Prison break</span>
+          <div class='list_item__placeholder'></div>
+          <div class='list_item__image'></div>
+          <div class='list_item__bg'></div>
+          <section class='list_item__feature'>
+            <img class='gif' src='http://www.jamiecoulter.co.uk/dev/codepen/pb_gif.gif'>
+            <div class='gif_overlay'></div>
+            <div class='information'>
+              <h1>Prison break</h1>
+              <h2>120 episodes</h2>
+            </div>
+            <div class='description'>
+              <p>Michael Scofield is a desperate man in a desperate situation. His brother, Lincoln Burrows, was convicted of a crime he didnt commit and put on Death Row. Michael holds up a bank to get himself incarcerated alongside his brother in Fox River State Penitentiary, then sets in motion a series of elaborate plans to break Lincoln out and prove his innocence. Once out of jail, their perils arent over -- the brothers must flee to escape recapture and battle an intricate political conspiracy that puts everyones life at risk</p>
+            </div>
+            <div class='watch'>
+              <div class='ion-android-star'></div>
+              Watch now
+            </div>
+          </section>
+        </label>
+      </div>
+    </div>
+  </div>
+</div></path>
+                
+            </svg>
+        </div>
+        <div class="item__title">
+            <h2>Discovery</h2>
+        </div>
+    </article>
+    
+</div>
 </template>
