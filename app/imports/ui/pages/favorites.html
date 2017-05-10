@@ -1,0 +1,21 @@
+<template name="Favorites_Page">
+  {{>Food_Card list=list}}
+</template>
+
+<template name="Food_Card">
+  <div class="ui cards">
+    {{#each item in list}}
+      <div class="card">
+        <div class="content">
+          {{#if item.icon}}<img class="ui left floated mini image" src="{{item.icon}}">{{else}}{{/if}}
+          <div class="header">{{item.name}}</div>
+          <div class="meta">{{item.price}}</div>
+          <div class="description">{{#if item.info}} {{item.info}} {{else}}{{/if}}</div>
+        </div>
+        <div class="extra content">
+          <a class="ui fluid red button remove" id="{{item._id}}">Remove</a>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</template>

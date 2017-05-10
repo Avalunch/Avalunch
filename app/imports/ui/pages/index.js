@@ -92,3 +92,6 @@ import './market.js';
 
 import './profile-page.html';
 import './profile-page.js';
+
+import './favorites.html';
+import './favorites.js';

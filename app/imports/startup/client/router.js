@@ -8,6 +8,21 @@ FlowRouter.route('/', {
   },
 });
 
+FlowRouter.route('/favorites/:_id', {
+  name: 'Favorites_Dummy_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Favorites_Page' });
+  },
+});
+
+FlowRouter.route('/favorites', {
+  name: 'Favorites_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Favorites_Page' });
+  },
+});
+
+
 FlowRouter.route('/login', {
   name: 'Login_Page',
   action() {

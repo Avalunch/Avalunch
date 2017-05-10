@@ -1,4 +1,3 @@
-
 import { Template } from 'meteor/templating';
 
 export const menu = [
@@ -22,22 +21,12 @@ export const menu = [
   },
 ];
 
-
 Template.Da_Spot_Page.helpers({
   menu() {
     return menu;
   },
-  entre() {
-    return entre;
-  },
-  drinks() {
-    return drinks;
-  },
-  deserts() {
-    return deserts;
-  }
 });
 
-$('.menu-button').click(function() {
+$('.menu-button').click(function () {
   $('nav').toggleClass('active');
 });
