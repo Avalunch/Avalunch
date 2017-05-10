@@ -6,7 +6,8 @@ Template.Restaurant.onCreated(function onCreated() {
 });
 
 Template.Restaurant.events({
-  'click .favorite'() {
+  'click .favorite'(event) {
+    event.preventDefault();
     $('.favorite').click(function () {
       const name = $(this).attr('name');
       const icon = $(this).attr('icon');
