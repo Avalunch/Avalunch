@@ -2,78 +2,89 @@
 <template name="Your_Profile">
 
 
-<style>
-body {
-  font: normal 14px/20px 'Open Sans', sans-serif;
-  background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%,#DDF0E4   100%);
-  color: #333;
+
+
+
+
+
+<style type>
+.upload-button {
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: block;
+    float: left;
+}
+.wrapper{
+  width: 100%;
+  overflow: hidden;
+  background-image: url('http://apis.xogrp.com/media-api/images/27b736f4-fbf3-4b2e-a08c-7f5abaf6d370');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 </style>
+<div class="wrapper">
+<div style="position:relative;  top:10px; width:600px; height:400px; border-style: solid" class="ui container aligned centered">
+<img  style=" width:200px; height:200px" class="profile-pic" src="http://cdn.cutestpaw.com/wp-content/uploads/2012/07/l-Wittle-puppy-yawning.jpg" />
 
+<input class="file-upload" type="file" accept="image/*"/>
 
-    <div class="wrap ui container">
-      <div class="right-menu">
-        <a  class="active" href="#profile"><i class="fa fa-user"></i><span>Profile</span></a>
-        <a  href="{{pathFor 'View_Feed'}}"><i class="fa fa-photo"></i><span> Coming Soon!</span></a>
-        <a  href="{{pathFor 'Edit_Profile'}}"><i class="fa fa-folder"></i><span>Edit Info</span></a>
-      </div>
-      <div class="content">
-        <div class="profile open animated zoomIn">
-          <div class="avatar">
-            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQDVx9K9xAnaIBVZDhyw7nmuu1qlgyIn7Jd2K--4yproqtvonQw3g">
-            <div class="bubble">
-              {{#with current}}
-              <h3>{{ current.first }} {{ current.last }}</h3>
-              <div class="text">{{ current.profile }}</div>
-              <div class="text">{{ current.bio }}</div>
-              <div class="text">{{ current.twitter }}</div>
-              {{/with}}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  <!--
-  <div class="ui container">
-    <form class="ui form student-data-form {{ errorClass }}">
-      <h3 class="ui dividing header">Enter your information</h3>
-
-      <div class="field">
-        <div class="two fields">
-          {{> Text_Form_Control name="First Name" label="firstName" required=true errorMessage=(fieldError "firstName")}}
-          {{> Text_Form_Control name="Last Name" label="lastName" required=true errorMessage=(fieldError "lastName")}}
-        </div>
-      </div>
-      {{> Text_Form_Control name="Your Restaurants" label="address" required=true errorMessage=(fieldError "address")}}
-
-      <div class="field">
-        <div class="two fields">
-          {{> Text_Form_Control name="Telephone" label="telephone" required=true errorMessage=(fieldError "telephone")}}
-          {{> Text_Form_Control name="E-Mail" label="email" required=true errorMessage=(fieldError "email")}}
-        </div>
-      </div>
-
-      <div class="skills animated zoomIn">
-        <div class="avatar">
-
-          <div class="bubble">
-            <h3>Coming Soon</h3>
-            <a href="#">View Details </a>
-
-          </div>
-
-        </div>
-      </div>
-    </form>
-    </div>
-    -->
-    <div class="ui aligned center footer">
-      <a href="" target="_blank"><i class="fa fa-link"></i><span>Favorite Food</span></a>
-      <a href=""  target="_blank"><i class="fa fa-codepen"></i><span>My Order</span></a>
-      <a href=""  target="_blank"><i class="fa fa-twitter"></i><span>My Total</span></a>
-
-      <button class="ui primary button">Submit</button>
-
-
+<form class="ui form">
+  <div class="field">
+    <label>First Name</label>
+    <input type="text" name="first-name" placeholder="First Name">
   </div>
+  <div class="field">
+    <label>Last Name</label>
+    <input type="text" name="last-name" placeholder="Last Name">
+  </div>
+  
+  
+  <div class="field">
+    <label>Bio</label>
+    <textarea></textarea>
+  </div>
+  <div class="field">
+    <div class="ui checkbox">
+      <input type="checkbox" tabindex="0" class="hidden">
+      <label>I agree to the Terms and Conditions</label>
+    </div>
+  </div>
+  <button class="ui button" type="submit">Submit</button>
+</form>
+</div>
+</div>
+
+<script>
+ $(document).ready(function() {
+
+    
+    var readURL = function(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.profile-pic').attr('src', e.target.result);
+            }
+    
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+
+    $(".file-upload").on('change', function(){
+        readURL(this);
+    });
+    
+    $(".upload-button").on('click', function() {
+       $(".file-upload").click();
+    });
+});
+
+ $('.ui.checkbox')
+  .checkbox()
+;
+</script>
+
 </template>

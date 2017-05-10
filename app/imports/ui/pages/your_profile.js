@@ -6,7 +6,7 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { _ } from 'meteor/underscore';
 import { Users } from '/imports/api/users/users.js';
-
+import { FlowRouter } from 'meteor/kadira:flow-router';
 $(function () {
   $('.right-menu a').click(function() {
     $(this).siblings().removeClass('active');
@@ -28,3 +28,9 @@ Template.Your_Profile.helpers({
     return Users.findDoc(Meteor.user().profile.name);
   },
 });
+
+
+
+
+
+
